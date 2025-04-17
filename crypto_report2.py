@@ -1,4 +1,4 @@
-from backfill_reports import run_backfill
+from backfill_reports import backfill as run_backfill
 
 from dotenv import load_dotenv
 import os
