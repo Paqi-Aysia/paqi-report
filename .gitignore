@@ -1,0 +1,36 @@
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Environment settings
+.env
+.venv/
+env/
+venv/
+
+# OS-specific
+.DS_Store
+
+# API key or config files
+config.json
+*.env
+*.key
+*.pem
+
+# Data & reports
+reports/
+*.sqlite3
+*.csv
+*.json
+
+# VSCode and IDE configs
+.vscode/
+.idea/
+
+# Deployment or build artifacts
+build/
+dist/
+*.egg-info/

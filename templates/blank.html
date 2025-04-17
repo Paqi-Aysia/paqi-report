@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: #000000; /* Black background */
+            color: #f0f0f0;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            background: #151515;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        header nav a {
+            margin: 0 15px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        header nav a:hover {
+            color: #00bcd4;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #151515;
+            color: #808080;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Crypto Report Dashboard</h1>
+        <nav>
+            <a href="/">Paqi Daily</a>
+            <a href="/accumulated">Accumulated Insights</a>
+            <a href="/blog">Blog Posts</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>{{ title }}</h2>
+        <p>This page is currently under construction.</p>
+    </div>
+
+    <footer>
+        &copy; 2025 Crypto Dashboard. All rights reserved.
+    </footer>
+</body>
+</html>

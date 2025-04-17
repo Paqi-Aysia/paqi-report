@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Accumulated Insights</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: #000;
+      color: #f0f0f0;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      background: #000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    header nav a {
+      margin: 0 15px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    header nav a:hover {
+      color: #00bcd4;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 800px;
+      margin: 0px auto;
+    }
+
+    canvas {
+      background: #111;
+      border: 2px solid #00ffff88;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #00ffff66;
+      width: 100%;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #000;
+      color: #808080;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<header>
+<h1>The Paqi Report</h1>
+<nav>
+<a href="/">Paqi Daily</a>
+<a href="/accumulated">Accumulated Insights</a>
+<a href="/blog">Blog Posts</a>
+<a href="/contact">Contact</a>
+</nav>
+</header>
+<div class="container">
+<h2 style="text-align:center;">BTC &amp; ETH Price Over Time</h2><p style="text-align:center; margin-top: 10px; font-size: 0.95rem; color: #ccc;">This chart shows the daily prices of Bitcoin (BTC) and Ethereum (ETH) at the time data is pulled, offering a side-by-side view of how these leading cryptocurrencies move over time.</p>
+<canvas height="400" id="priceChart"></canvas>
+<h2 style="text-align:center; margin-top: 60px;">Aggregate Market Caps Over Time</h2><p style="text-align:center; margin-top: 10px; font-size: 0.95rem; color: #ccc;">This chart visualizes the total market capitalization (in billions USD) of various crypto sectors such as L1s, L2s, DeFi, AI, Gaming, and Stablecoins over time. Each colored line tracks one sector.</p>
+<canvas height="400" id="marketCapChart"></canvas>
+<h2 style="text-align:center; margin-top: 60px;">Chain Inflows / Outflows Over Time</h2><p style="text-align:center; margin-top: 10px; font-size: 0.95rem; color: #ccc;">This chart tracks the net 1-day TVL (Total Value Locked) changes (in millions USD) across the most active chains. It highlights capital flowing into or out of chains, signaling ecosystem growth or decline. 
+  The value of tvlChange1d is divided by 1e6 to convert from USD to millions of USD, for cleaner visual scaling.
+	Chains are selected by average absolute change over time, and then the top 7 are used in the chart.
+	This ensures you only see the chains with the most notable movement, not the ones with flat TVL.
+  Only the top 7 chains with the highest average absolute daily TVL changes across the dataset are included in the graph. If a chain is not in this top 7 list, its inflows/outflows are not shown at all. If a top 7 chain has no inflow/outflow data for a specific day, it will display as 0 for that day.</p>
+<canvas height="400" id="chainFlowChart"></canvas>
+<h2 style="text-align:center; margin-top: 60px;">Top Protocols TVL Over Time</h2><p style="text-align:center; margin-top: 10px; font-size: 0.95rem; color: #ccc;">This chart shows the Total Value Locked (TVL) of the top 20 DeFi protocols over time, based on average TVL across all recorded days.
+  Each protocol's daily TVL is normalized in billions of USD for readability.
+  Only the protocols with the highest average TVL across the dataset are included in this graph.
+  If a protocol doesn't appear in a particular day's dataset, it will show a gap in the line for that day.
+</p>
+<canvas height="400" id="tvlChart"></canvas>
+<h2 style="text-align:center; margin-top: 60px;">Most Frequent Top Movers</h2><p style="text-align:center; margin-top: 10px; font-size: 0.95rem; color: #ccc;">This bar chart displays the tokens that appeared most frequently in the top five daily gainers across the selected historical range. For each date, the backend extracts the top five tokens with the highest 24-hour price change and aggregates how often each token shows up in that list over time. The chart then surfaces only the top 10 most frequently occurring tokens, allowing us to identify which assets are repeatedly among the most volatile or trend-driven during the observed period. If a token doesn’t consistently make the top five on any given day, it is excluded from the chart entirely. This approach filters for strong market performers, sentiment-driven assets, or coins with persistent narrative traction.</p>
+<canvas height="400" id="topMoversChart"></canvas>
+<h2 style="text-align:center; margin-top: 60px;">Trending Key Words in Hot News</h2><p style="text-align:center; margin-top: 10px; font-size: 0.95rem; color: #ccc;">This is a bubble chart that visualizes the most frequently mentioned crypto-related keywords from daily news headlines. Each bubble represents a keyword (e.g., “Ethereum,” “LayerZero,” “restaking”), with the bubble’s size corresponding to how many times that term appeared across all headlines during the selected timeframe. The chart parses and filters headlines for specific predefined crypto terms and aggregates their appearances. Only the top 20 most frequently mentioned terms are shown. The x and y positions of the bubbles are randomized for visual distribution, as they don’t correspond to any axis value. This chart offers a high-level glimpse of the narratives that dominated news cycles—be it trending tokens, technologies, or macro themes—throughout the reporting period.</p>
+<canvas height="400" id="newsChart"></canvas>
+</div>
+<footer>
+<p>Follow me on <a href="https://x.com/Paqi_Aysia" target="_blank">Twitter</a></p>
+    © 2025 The Paqi Report. All rights reserved.
+  </footer>
+<script>
+    fetch('/accumulated-data')
+      .then(res => res.json())
+      .then(data => {
+        if (data.status !== "success") throw new Error("Data fetch failed");
+
+        const records = data.data;
+        const labels = records.map(d => d.date);
+        const btcPrices = records.map(d => d.maxis.BTC ?? d.maxis.BITCOIN);
+        const ethPrices = records.map(d => d.maxis.ETH ?? d.maxis.ETHEREUM);
+
+        const ctx = document.getElementById('priceChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels,
+            datasets: [
+              {
+                label: 'BTC',
+                data: btcPrices,
+                borderColor: '#f7931a',
+                backgroundColor: '#f7931a33',
+                tension: 0.3
+              },
+              {
+                label: 'ETH',
+                data: ethPrices,
+                borderColor: '#3c3cce',
+                backgroundColor: '#3c3cce33',
+                tension: 0.3
+              }
+            ]
+          },
+          options: {
+            plugins: {
+              legend: { labels: { color: '#ffffff' } }
+            },
+            scales: {
+              x: { ticks: { color: '#ffffff' }, grid: { color: '#333' } },
+              y: { ticks: { color: '#ffffff' }, grid: { color: '#333' } }
+            }
+          }
+        });
+                // ---- Top Movers Chart ----
+        const moverCounts = {};
+
+        records.forEach(day => {
+        day.top_movers.forEach(coin => {
+            const key = `${coin.name} (${coin.symbol.toUpperCase()})`;
+            moverCounts[key] = (moverCounts[key] || 0) + 1;
+        });
+        });
+
+        // Sort by frequency and get top 10
+        const topMovers = Object.entries(moverCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+
+        const moverLabels = topMovers.map(([label]) => label);
+        const moverValues = topMovers.map(([, count]) => count);
+
+        const ctx2 = document.getElementById('topMoversChart').getContext('2d');
+        new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: moverLabels,
+            datasets: [{
+            label: 'Times in Top Movers',
+            data: moverValues,
+            backgroundColor: '#00ffff88',
+            borderColor: '#00ffff',
+            borderWidth: 1
+            }]
+        },
+        options: {
+            plugins: {
+            legend: { display: false }
+            },
+            scales: {
+            x: {
+                ticks: { color: '#ffffff' },
+                grid: { color: '#333' }
+            },
+            y: {
+                beginAtZero: true,
+                ticks: { color: '#ffffff' },
+                grid: { color: '#333' }
+            }
+            }
+        }
+        });
+                // ---- Market Cap Chart ----
+        const categories = Object.keys(records[0].market_caps);
+        const categoryData = {};
+
+        // Initialize arrays for each category
+        categories.forEach(cat => categoryData[cat] = []);
+
+        records.forEach(day => {
+        categories.forEach(cat => {
+            const cap = day.market_caps?.[cat] || 0;
+            categoryData[cat].push(cap / 1e9); // Convert to billions
+        });
+        });
+
+        const colors = [
+        '#ff6384', '#36a2eb', '#cc65fe', '#ffce56',
+        '#00ffff', '#00ff88', '#ffaa00', '#ff6ec7',
+        '#bfff00', '#ff6666'
+        ];
+
+        const categoryDatasets = categories.map((cat, i) => ({
+        label: cat,
+        data: categoryData[cat],
+        borderColor: colors[i % colors.length],
+        backgroundColor: colors[i % colors.length] + '33',
+        tension: 0.4
+        }));
+
+        const ctx3 = document.getElementById('marketCapChart').getContext('2d');
+        new Chart(ctx3, {
+        type: 'line',
+        data: {
+            labels,
+            datasets: categoryDatasets
+        },
+        options: {
+            plugins: {
+            legend: { labels: { color: '#ffffff' } }
+            },
+            scales: {
+            x: { ticks: { color: '#ffffff' }, grid: { color: '#333' } },
+            y: {
+                ticks: { color: '#ffffff' },
+                grid: { color: '#333' },
+                title: {
+                display: true,
+                text: 'Market Cap (in Billions USD)',
+                color: '#ffffff'
+                }
+            }
+            }
+        }
+        });
+                // ---- TVL Chart ----
+        const protocolHistory = {};
+
+        // Gather all TVL values over time for each protocol
+        records.forEach(day => {
+        day.tvl_data.forEach(p => {
+            const name = p.name;
+            if (!protocolHistory[name]) protocolHistory[name] = [];
+            protocolHistory[name].push({
+            date: day.date,
+            tvl: p.tvl
+            });
+        });
+        });
+
+        // Determine top 7 protocols by average TVL
+        const protocolAverages = Object.entries(protocolHistory)
+        .map(([name, values]) => {
+            const avg = values.reduce((sum, d) => sum + d.tvl, 0) / values.length;
+            return { name, avg };
+        })
+        .sort((a, b) => b.avg - a.avg)
+        .slice(0, 20);
+
+        const topProtocols = protocolAverages.map(p => p.name);
+
+        // Align data for chart.js
+        const alignedData = {};
+        topProtocols.forEach(name => {
+        alignedData[name] = records.map(day => {
+            const match = day.tvl_data.find(p => p.name === name);
+            return match ? match.tvl / 1e9 : null; // TVL in billions
+        });
+        });
+
+        const tvlColors = [
+            '#ff6384', // Neon Pink
+            '#36a2eb', // Sky Blue
+            '#cc65fe', // Purple
+            '#00ffff', // Cyan
+            '#ffaa00', // Amber
+            '#ff6ec7', // Hot Pink
+            '#00ff88', // Mint Green
+            '#bfff00', // Lime
+            '#ff6666', // Coral Red
+            '#8e44ad', // Violet
+            '#1abc9c', // Teal
+            '#3498db', // Blue
+            '#e74c3c', // Tomato Red
+            '#9b59b6', // Medium Purple
+            '#2ecc71', // Green
+            '#f1c40f', // Sunflower
+            '#e67e22', // Orange
+            '#7f8c8d', // Gray
+            '#ff00ff', // Magenta
+            '#00ffcc'  // Aqua Green
+            ];
+
+        const tvlDatasets = topProtocols.map((name, i) => ({
+        label: name,
+        data: alignedData[name],
+        borderColor: tvlColors[i % tvlColors.length],
+        backgroundColor: tvlColors[i % tvlColors.length] + '33',
+        tension: 0.3
+        }));
+
+        const ctx4 = document.getElementById('tvlChart').getContext('2d');
+        new Chart(ctx4, {
+        type: 'line',
+        data: {
+            labels,
+            datasets: tvlDatasets
+        },
+        options: {
+            plugins: {
+            legend: { labels: { color: '#ffffff' } }
+            },
+            scales: {
+            x: { ticks: { color: '#ffffff' }, grid: { color: '#333' } },
+            y: {
+                ticks: { color: '#ffffff' },
+                grid: { color: '#333' },
+                title: {
+                display: true,
+                text: 'TVL (Billions USD)',
+                color: '#ffffff'
+                }
+            }
+            }
+        }
+        });
+                // ---- Chain Inflow/Outflow Chart ----
+        const chainHistory = {};
+
+        // Gather inflows/outflows for each chain
+        records.forEach(day => {
+            day.chain_flows.forEach(c => {
+            let name = c.name;
+
+            // Normalize variations
+            if (name.includes("Hyperliquid")) name = "Hyperliquid";
+
+            if (!chainHistory[name]) chainHistory[name] = [];
+            chainHistory[name].push({
+                date: day.date,
+                change: c.tvlChange1d
+            });
+            });
+        });
+
+        // Calculate average absolute TVL change and pick top 7 chains
+        const chainAverages = Object.entries(chainHistory)
+        .map(([name, values]) => {
+            const avg = values.reduce((sum, d) => sum + Math.abs(d.change), 0) / values.length;
+            return { name, avg };
+        })
+        .sort((a, b) => b.avg - a.avg)
+        .slice(0, 7);
+
+        const topChains = chainAverages.map(c => c.name);
+
+        // Align data
+        const flowData = {};
+        topChains.forEach(name => {
+        flowData[name] = records.map(day => {
+            const entry = day.chain_flows.find(c => c.name === name);
+            return entry ? entry.tvlChange1d / 1e6 : 0; // in millions
+        });
+        });
+
+        const flowColors = [
+        '#ff6384', '#36a2eb', '#cc65fe', '#ffaa00',
+        '#00ffcc', '#ff6ec7', '#00ffff'
+        ];
+
+        const flowDatasets = topChains.map((name, i) => ({
+        label: name,
+        data: flowData[name],
+        borderColor: flowColors[i % flowColors.length],
+        backgroundColor: flowColors[i % flowColors.length] + '44',
+        fill: true,
+        tension: 0.3
+        }));
+
+        const ctx5 = document.getElementById('chainFlowChart').getContext('2d');
+        new Chart(ctx5, {
+        type: 'line',
+        data: {
+            labels,
+            datasets: flowDatasets
+        },
+        options: {
+            plugins: {
+            legend: { labels: { color: '#ffffff' } }
+            },
+            scales: {
+            x: { ticks: { color: '#ffffff' }, grid: { color: '#333' } },
+            y: {
+                ticks: { color: '#ffffff' },
+                grid: { color: '#333' },
+                title: {
+                display: true,
+                text: 'TVL Change (Millions USD)',
+                color: '#ffffff'
+                }
+            }
+            }
+        }
+        });
+        // ---- Bubble Chart of Trending Crypto Terms ----
+        const cryptoTerms = [
+        "eth", "ethereum", "btc", "bitcoin", "sol", "solana", "layerzero", "base",
+        "arbitrum", "optimism", "avalanche", "lido", "eigenlayer", "jito", "pendle",
+        "defi", "tvl", "staking", "airdrops", "zk", "rollup", "modular", "restaking",
+        "eigen", "ethena", "tokenization", "zircuit", "blast", "bridge", "cosmos",
+        "polkadot", "mantle", "sui", "aptos", "tron", "ton", "binance", "uniswap",
+        "dex", "evm", "usdt", "usdc", "rwa", "agent", "depin", "stablecoin", "nft",
+        "metaverse", "wallet", "liquidity", "staking", "validator", "ai", "rwa", 
+        "real world assets", "agent", "modular", "airdrops", "restaking", "points", 
+        "loyalty", "gas fees", "mempool", "defi","depin","gaming","web3 gaming","meme"
+        ];
+
+        const termSet = new Set(cryptoTerms);
+        const wordBubbleCounts = {};
+
+        records.forEach(day => {
+        day.news.forEach(headline => {
+            const words = headline
+            .toLowerCase()
+            .replace(/[^\w\s]/g, '')
+            .split(/\s+/)
+            .filter(word => word.length > 2 && termSet.has(word));
+
+            words.forEach(word => {
+            wordBubbleCounts[word] = (wordBubbleCounts[word] || 0) + 1;
+            });
+        });
+        });
+
+        const topBubbles = Object.entries(wordBubbleCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 20)
+        .map(([word, count]) => ({
+            x: Math.random() * 100,
+            y: Math.random() * 100,
+            r: Math.sqrt(count) * 4,
+            label: word
+        }));
+
+        const ctx6 = document.getElementById('newsChart').getContext('2d');
+        new Chart(ctx6, {
+        type: 'bubble',
+        data: {
+            datasets: [{
+            label: 'Trending Crypto Terms',
+            data: topBubbles,
+            backgroundColor: '#00ffff88',
+            borderColor: '#00ffff'
+            }]
+        },
+        options: {
+            plugins: {
+            tooltip: {
+                callbacks: {
+                label: ctx => `${ctx.raw.label}: ${Math.round((ctx.raw.r ** 2) / 16)} mentions`
+                }
+            },
+            legend: { display: false }
+            },
+            scales: {
+            x: {
+                display: false,
+                min: 0,
+                max: 100
+            },
+            y: {
+                display: false,
+                min: 0,
+                max: 100
+            }
+            }
+        }
+        });
+      })
+      .catch(err => {
+        document.body.innerHTML += `<p style="color:red;">Failed to load chart: ${err}</p>`;
+      });
+  </script>
+</body>
+</html>
