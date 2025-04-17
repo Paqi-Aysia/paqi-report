@@ -23,7 +23,10 @@ config.json
 # Data & reports
 *.sqlite3
 *.csv
+# Ignore all JSON files...
 *.json
+# ...except the accumulated insights file
+!data/accumulated.json
 
 # VSCode and IDE configs
 .vscode/
