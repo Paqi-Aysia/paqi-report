@@ -1,3 +1,5 @@
+from backfill_reports import run_backfill
+
 from dotenv import load_dotenv
 import os
 load_dotenv()
@@ -249,5 +251,13 @@ def accumulated_data():
     return jsonify({"status": "error", "message": "No accumulated data found."})
 
 if __name__ == "__main__":
+    # Only run backfill if the accumulated data doesn't exist or is empty
+    if not os.path.exists("data/accumulated.json") or os.stat("data/accumulated.json").st_size == 0:
+        try:
+            print("Running one-time backfill...")
+            run_backfill()
+        except Exception as e:
+            logging.warning(f"Backfill failed: {e}")
+
     main()
     app.run(host="0.0.0.0", port=5001, debug=True)
