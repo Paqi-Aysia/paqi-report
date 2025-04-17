@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: paqi-report
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn crypto_report2:app
+    envVars:
+      - key: CRYPTOPANIC_TOKEN
+        sync: false
