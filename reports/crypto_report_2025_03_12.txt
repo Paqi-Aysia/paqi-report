@@ -1,0 +1,68 @@
+Crypto Market Report - 2025-03-12
+
+The Maxis:
+Bitcoin (BTC): Current Price $81441 | 24-Hour Change: 0.42%
+Ethereum (ETH): Current Price $1852.62 | 24-Hour Change: -2.91%
+
+Top Movers (Last 24 Hours, Top 500 MC):
+Pi Network (pi): Current Price $1.63 | 24-Hour Change: 18.41%
+Story (ip): Current Price $5.98 | 24-Hour Change: 16.92%
+Celestia (tia): Current Price $3.32 | 24-Hour Change: 12.50%
+Pepe (pepe): Current Price $6.43e-06 | 24-Hour Change: 8.09%
+Mantle (mnt): Current Price $0.743902 | 24-Hour Change: 5.67%
+
+Aggregate Market Capitalizations:
+L1: $2,146,417,629,320.67
+L2: $14,072,983,687.35
+Gaming: $11,066,853,546.83
+DeFi: $83,135,464,004.59
+AI: $21,907,286,661.06
+RWA: $25,137,983,734.67
+Stablecoins: $235,295,614,719.16
+Solana Meme: $6,851,851,409.85
+AI Agent: $4,052,087,662.63
+DePIN: $16,139,549,756.92
+
+TVL Data (Top TVLs):
+Lido, TVL: $17935589528.84
+AAVE V3, TVL: $16497629746.90
+EigenLayer, TVL: $8474429887.39
+Ethena USDe, TVL: $5454824784.83
+Pendle, TVL: $4558130433.99
+Babylon, TVL: $4369466034.29
+ether.fi Stake, TVL: $4186728120.92
+Arbitrum Bridge, TVL: $4085388947.43
+Binance staked ETH, TVL: $3749578775.24
+Base Bridge, TVL: $3728760546.37
+JustLend, TVL: $3294090846.06
+Morpho Blue, TVL: $2992968297.36
+Polygon Bridge & Staking, TVL: $2686983928.25
+Uniswap V3, TVL: $2557403689.33
+Royco Protocol, TVL: $2484939034.44
+MakerDAO, TVL: $2424756202.48
+Veda, TVL: $2242719621.26
+Spark, TVL: $2202005330.09
+Optimism Bridge, TVL: $2143844438.96
+Jito, TVL: $2057797308.89
+
+Inflow and Outflow:
+Top Chains by Inflow:
+Solana: TVL Change 1D: $74,698,228.62
+Avalanche: TVL Change 1D: $39,814,163.24
+Sui: TVL Change 1D: $29,811,821.37
+Berachain: TVL Change 1D: $29,392,285.00
+Sonic: TVL Change 1D: $19,765,367.45
+
+Top Chains by Outflow:
+Ethereum: TVL Change 1D: $-276,951,748.66
+Tron: TVL Change 1D: $-153,418,562.21
+Hyperliquid L1: TVL Change 1D: $-107,777,988.89
+Mantle: TVL Change 1D: $-23,197,301.28
+LaChain Network: TVL Change 1D: $-10,716,893.61
+
+Hot News:
+Bitcoin Surges to $82K Amid SEC’s ETF Delays and Lummis’ Bitcoin Reserve Plans - https://cryptopanic.com/news/20814078/Bitcoin-Surges-to-82K-Amid-SECs-ETF-Delays-and-Lummis-Bitcoin-Reserve-Plans?mtm_campaign=API-OFA
+Trump’s Canada Tariffs Threaten Crypto Market Stability - https://cryptopanic.com/news/20813928/Trumps-Canada-Tariffs-Threaten-Crypto-Market-Stability?mtm_campaign=API-OFA
+Hackers Blackmail YouTubers to Spread Crypto-Mining Malware - https://cryptopanic.com/news/20813858/Hackers-Blackmail-YouTubers-to-Spread-Crypto-Mining-Malware?mtm_campaign=API-OFA
+Bitcoin and Crypto About To Be Boosted by Global Money Supply Explosion: Former Goldman Sachs Executive - https://cryptopanic.com/news/20811946/Bitcoin-and-Crypto-About-To-Be-Boosted-by-Global-Money-Supply-Explosion-Former-Goldman-Sachs-Executive?mtm_campaign=API-OFA
+Pi Network Unlocks 188 Million Tokens in March 2025 - https://cryptopanic.com/news/20808719/Pi-Network-Unlocks-188-Million-Tokens-in-March-2025?mtm_campaign=API-OFA

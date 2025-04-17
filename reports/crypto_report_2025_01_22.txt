@@ -1,0 +1,68 @@
+Crypto Market Report - 2025-01-22
+
+The Maxis:
+Bitcoin (BTC): Current Price $102235 | 24-Hour Change: -3.62%
+Ethereum (ETH): Current Price $3217.18 | 24-Hour Change: -3.65%
+
+Top Movers (Last 24 Hours, Top 500 MC):
+Worldcoin (wld): Current Price $2.25 | 24-Hour Change: 6.09%
+Pudgy Penguins (pengu): Current Price $0.0248927 | 24-Hour Change: 5.87%
+XDC Network (xdc): Current Price $0.122667 | 24-Hour Change: 4.13%
+Gate (gt): Current Price $22.43 | 24-Hour Change: 2.81%
+MANTRA (om): Current Price $3.64 | 24-Hour Change: 0.95%
+
+Aggregate Market Capitalizations:
+L1: $2,843,989,836,173.11
+L2: $25,920,120,287.29
+Gaming: $20,685,422,816.27
+DeFi: $121,434,171,914.96
+AI: $42,718,611,718.30
+RWA: $37,044,387,822.76
+Stablecoins: $220,104,992,316.53
+Solana Meme: $23,498,245,049.62
+AI Agent: $13,468,884,786.06
+DePIN: $29,881,452,726.42
+
+TVL Data (Top TVLs):
+Lido, TVL: $31129942030.36
+AAVE V3, TVL: $20710045341.16
+EigenLayer, TVL: $14418580559.38
+Arbitrum Bridge, TVL: $8206749637.52
+ether.fi Stake, TVL: $7308699268.37
+Binance staked ETH, TVL: $6560556131.89
+JustLend, TVL: $6121972241.92
+Base Bridge, TVL: $6018940031.73
+Babylon, TVL: $5852652204.58
+Ethena USDe, TVL: $5734941617.70
+Pendle, TVL: $5145072394.50
+MakerDAO, TVL: $4807517374.22
+Optimism Bridge, TVL: $4075388267.07
+Jito, TVL: $3736797893.68
+Uniswap V3, TVL: $3668175481.75
+Morpho Blue, TVL: $3536553841.93
+Spark, TVL: $3513173789.25
+Polygon Bridge & Staking, TVL: $2987012936.24
+Raydium, TVL: $2968976475.21
+Rocket Pool, TVL: $2417113962.83
+
+Inflow and Outflow:
+Top Chains by Inflow:
+Tron: TVL Change 1D: $80,103,429.04
+Sei: TVL Change 1D: $5,493,684.93
+XDC: TVL Change 1D: $4,209,309.92
+TON: TVL Change 1D: $1,546,419.33
+Eclipse: TVL Change 1D: $841,851.23
+
+Top Chains by Outflow:
+Ethereum: TVL Change 1D: $-1,104,069,130.60
+Hyperliquid: TVL Change 1D: $-197,024,438.04
+Solana: TVL Change 1D: $-129,429,410.70
+Bitcoin: TVL Change 1D: $-82,866,632.81
+BSC: TVL Change 1D: $-48,533,721.94
+
+Hot News:
+Trump family may build ‘giant businesses’ on Ethereum — Lubin - https://cryptopanic.com/news/20588650/Trump-family-may-build-giant-businesses-on-Ethereum-Lubin?mtm_campaign=API-OFA
+Justin Sun proposes plan to drive Ethereum to $10,000 - https://cryptopanic.com/news/20588637/Justin-Sun-proposes-plan-to-drive-Ethereum-to-10000?mtm_campaign=API-OFA
+Justin Sun Reveals Plan to Take ETH to $10K If He Was Leader of the Ethereum Foundation - https://cryptopanic.com/news/20588593/Justin-Sun-Reveals-Plan-to-Take-ETH-to-10K-If-He-Was-Leader-of-the-Ethereum-Foundation?mtm_campaign=API-OFA
+‘ETH to $10,000’ Plan Presented by Tron Founder Justin Sun - https://cryptopanic.com/news/20588024/ETH-to-10000-Plan-Presented-by-Tron-Founder-Justin-Sun?mtm_campaign=API-OFA
+Tornado Cash Sanctions Dropped: A Major Win for Privacy in Crypto - https://cryptopanic.com/news/20587278/Tornado-Cash-Sanctions-Dropped-A-Major-Win-for-Privacy-in-Crypto?mtm_campaign=API-OFA

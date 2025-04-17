@@ -1,0 +1,73 @@
+Crypto Market Report - 2025-04-08
+
+The Maxis:
+Bitcoin (BTC): Current Price $79859 | 24-Hour Change: 3.43%
+Ethereum (ETH): Current Price $1572.02 | 24-Hour Change: 3.91%
+
+Top Movers (Last 24 Hours, Top 500 MC):
+Hyperliquid (hype): $12.26 | 24-Hour Change: 17.60%
+Hedera (hbar): $0.162629 | 24-Hour Change: 17.19%
+KuCoin (kcs): $9.5 | 24-Hour Change: 16.88%
+Render (render): $3.13 | 24-Hour Change: 13.89%
+Maker (mkr): $1285.52 | 24-Hour Change: 13.62%
+
+Aggregate Market Capitalizations:
+L1: $2,059,184,139,934.47
+L2: $11,804,538,532.03
+Gaming: $9,669,025,377.46
+DeFi: $76,882,368,689.42
+AI: $19,164,446,938.98
+RWA: $30,326,473,178.70
+Stablecoins: $236,939,842,422.57
+Solana Meme: $5,871,909,774.70
+AI Agent: $3,337,061,888.22
+DePIN: $14,577,868,850.66
+
+TVL Data (Top TVLs):
+AAVE V3, TVL: $16715169223.70
+Lido, TVL: $14754053437.38
+EigenLayer, TVL: $7305563069.16
+Sky Lending, TVL: $6582687879.75
+Ethena USDe, TVL: $5103715198.55
+Babylon, TVL: $3940881740.04
+ether.fi Stake, TVL: $3842515724.82
+Arbitrum Bridge, TVL: $3540305723.64
+JustLend, TVL: $3468179040.13
+Binance staked ETH, TVL: $3320898608.72
+Base Bridge, TVL: $3233324092.43
+Pendle, TVL: $3095173773.79
+Morpho Blue, TVL: $2617753718.54
+Uniswap V3, TVL: $2440480615.45
+Polygon Bridge & Staking, TVL: $2416793811.85
+Royco Protocol, TVL: $2299239734.07
+Veda, TVL: $1976784211.26
+SparkLend, TVL: $1959964239.90
+BlackRock BUIDL, TVL: $1902482980.19
+Jito Liquid Staking, TVL: $1833554864.78
+
+Inflow and Outflow:
+Top Chains by Inflow:
+Solana: TVL Change 1D: $103,943,942.00
+CORE: TVL Change 1D: $34,631,061.00
+Avalanche: TVL Change 1D: $9,016,650.00
+Rootstock: TVL Change 1D: $6,397,097.00
+Cronos: TVL Change 1D: $6,075,892.00
+
+Top Chains by Outflow:
+Base: TVL Change 1D: $-196,829,415.00
+Sonic: TVL Change 1D: $-40,759,833.00
+Arbitrum: TVL Change 1D: $-15,505,242.00
+BSC: TVL Change 1D: $-12,461,179.00
+Gnosis: TVL Change 1D: $-3,010,021.00
+
+Hot News:
+MegaETH: Supercharging Ethereum for the Real-Time Internet Era - https://cryptopanic.com/news/20957348/MegaETH-Supercharging-Ethereum-for-the-Real-Time-Internet-Era?mtm_campaign=API-OFA
+Trump escalates trade war. BTC at 80k - https://cryptopanic.com/news/20956948/Trump-escalates-trade-war-BTC-at-80k?mtm_campaign=API-OFA
+ETH Drops to 2-Year Lows Amid Crypto Selloff - https://cryptopanic.com/news/20954761/ETH-Drops-to-2-Year-Lows-Amid-Crypto-Selloff?mtm_campaign=API-OFA
+Ethereum Whales Scoop Up $60M as ETH Price Tumbles to 2023 Lows - https://cryptopanic.com/news/20952800/Ethereum-Whales-Scoop-Up-60M-as-ETH-Price-Tumbles-to-2023-Lows?mtm_campaign=API-OFA
+Markets are crashing. Bitcoin at 75k - https://cryptopanic.com/news/20943186/Markets-are-crashing-Bitcoin-at-75k?mtm_campaign=API-OFA
+PayPal Adds Solana and Chainlink to its Crypto Services - https://cryptopanic.com/news/20938494/PayPal-Adds-Solana-and-Chainlink-to-its-Crypto-Services?mtm_campaign=API-OFA
+Simulation Game ‘Infected’ Leaves Base for Solana Over Transaction Bottlenecks - https://cryptopanic.com/news/20936518/Simulation-Game-Infected-Leaves-Base-for-Solana-Over-Transaction-Bottlenecks?mtm_campaign=API-OFA
+Bitcoin shows signs of decoupling from US equities, could reclaim $100K - https://cryptopanic.com/news/20931625/Bitcoin-shows-signs-of-decoupling-from-US-equities-could-reclaim-100K?mtm_campaign=API-OFA
+XRP network activity collapses 65% - https://cryptopanic.com/news/20928911/XRP-network-activity-collapses-65?mtm_campaign=API-OFA
+Pump.fun brings back livestreaming after suspending it for disturbing meme coin content - https://cryptopanic.com/news/20928062/Pumpfun-brings-back-livestreaming-after-suspending-it-for-disturbing-meme-coin-content?mtm_campaign=API-OFA

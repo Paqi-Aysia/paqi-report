@@ -1,0 +1,68 @@
+Crypto Market Report - 2025-03-23
+
+The Maxis:
+Bitcoin (BTC): Current Price $85107 | 24-Hour Change: 1.22%
+Ethereum (ETH): Current Price $2004.08 | 24-Hour Change: 0.97%
+
+Top Movers (Last 24 Hours, Top 500 MC):
+Official Trump (trump): Current Price $12.13 | 24-Hour Change: 11.51%
+Bonk (bonk): Current Price $1.315e-05 | 24-Hour Change: 5.87%
+Bitget Token (bgb): Current Price $4.93 | 24-Hour Change: 5.03%
+Tokenize Xchange (tkx): Current Price $35.03 | 24-Hour Change: 4.96%
+Jupiter (jup): Current Price $0.548387 | 24-Hour Change: 4.58%
+
+Aggregate Market Capitalizations:
+L1: $2,257,649,475,384.98
+L2: $14,881,818,203.37
+Gaming: $12,075,994,134.93
+DeFi: $92,069,404,673.28
+AI: $23,784,983,203.46
+RWA: $33,374,276,983.57
+Stablecoins: $238,261,008,946.71
+Solana Meme: $8,024,923,564.99
+AI Agent: $4,519,353,037.24
+DePIN: $17,153,332,086.46
+
+TVL Data (Top TVLs):
+Lido, TVL: $18764650672.98
+AAVE V3, TVL: $17920687268.15
+EigenLayer, TVL: $8954043070.41
+Ethena USDe, TVL: $5389453209.71
+ether.fi Stake, TVL: $4782587904.64
+Pendle, TVL: $4711614483.52
+Babylon, TVL: $4506397702.54
+Arbitrum Bridge, TVL: $4432853360.67
+Base Bridge, TVL: $4079512103.22
+Binance staked ETH, TVL: $4043282157.24
+JustLend, TVL: $3488949576.14
+Morpho Blue, TVL: $2985178339.66
+Uniswap V3, TVL: $2829801884.61
+Polygon Bridge & Staking, TVL: $2593762428.96
+MakerDAO, TVL: $2537493812.93
+Royco Protocol, TVL: $2528286476.10
+Veda, TVL: $2412830864.52
+Spark, TVL: $2302117082.98
+Jito, TVL: $2231134627.78
+Optimism Bridge, TVL: $2165406113.15
+
+Inflow and Outflow:
+Top Chains by Inflow:
+Binance: TVL Change 1D: $212,592.00
+Abstract: TVL Change 1D: $19,516.00
+Harmony: TVL Change 1D: $0.00
+X Layer: TVL Change 1D: $0.00
+Aurora: TVL Change 1D: $0.00
+
+Top Chains by Outflow:
+Harmony: TVL Change 1D: $0.00
+X Layer: TVL Change 1D: $0.00
+Aurora: TVL Change 1D: $0.00
+Mantle: TVL Change 1D: $0.00
+Ink: TVL Change 1D: $0.00
+
+Hot News:
+ETH may reclaim $2.2K &quot;macro range&quot; amid growing whale accumulation - https://cryptopanic.com/news/20862813/ETH-may-reclaim-22K-quotmacro-rangequot-amid-growing-whale-accumulation?mtm_campaign=API-OFA
+XRP ETF Approval Date Nears - https://cryptopanic.com/news/20862671/XRP-ETF-Approval-Date-Nears?mtm_campaign=API-OFA
+Solana’s meme coin universe is built to burn the unprepared - https://cryptopanic.com/news/20861276/Solanas-meme-coin-universe-is-built-to-burn-the-unprepared?mtm_campaign=API-OFA
+Cardano Founder Debunks 'Ghost Chain' Claims: What's Going On? - https://cryptopanic.com/news/20860732/Cardano-Founder-Debunks-Ghost-Chain-Claims-Whats-Going-On?mtm_campaign=API-OFA
+Senator Lummis Proposes U.S. Sell Gold to Buy 200,000 Bitcoin Annually for Five Years, Totaling 1 Million Bitcoin - https://cryptopanic.com/news/20860568/Senator-Lummis-Proposes-US-Sell-Gold-to-Buy-200000-Bitcoin-Annually-for-Five-Years-Totaling-1-Million-Bitcoin?mtm_campaign=API-OFA

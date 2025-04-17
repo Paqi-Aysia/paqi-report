@@ -1,0 +1,73 @@
+Crypto Market Report - 2025-04-04
+
+The Maxis:
+Bitcoin (BTC): Current Price $84233 | 24-Hour Change: 2.58%
+Ethereum (ETH): Current Price $1811.37 | 24-Hour Change: 1.35%
+
+Top Movers (Last 24 Hours, Top 500 MC):
+Cosmos Hub (atom): $4.99 | 24-Hour Change: 10.19%
+Maker (mkr): $1360.61 | 24-Hour Change: 9.29%
+Sonic (prev. FTM) (s): $0.503504 | 24-Hour Change: 8.61%
+Pepe (pepe): $7.09e-06 | 24-Hour Change: 7.86%
+Algorand (algo): $0.188258 | 24-Hour Change: 7.40%
+
+Aggregate Market Capitalizations:
+L1: $2,198,672,927,157.78
+L2: $12,993,883,926.12
+Gaming: $10,594,426,965.66
+DeFi: $84,658,694,875.29
+AI: $20,839,138,335.25
+RWA: $31,993,725,975.30
+Stablecoins: $237,698,030,196.05
+Solana Meme: $6,536,856,059.26
+AI Agent: $3,755,557,943.27
+DePIN: $15,583,823,805.97
+
+TVL Data (Top TVLs):
+AAVE V3, TVL: $17172701191.70
+Lido, TVL: $17038862985.05
+EigenLayer, TVL: $8386235360.98
+Sky Lending, TVL: $7157539804.59
+Ethena USDe, TVL: $5248468515.53
+ether.fi Stake, TVL: $4462216957.47
+Babylon, TVL: $4323723051.95
+Arbitrum Bridge, TVL: $3918594471.63
+JustLend, TVL: $3781621415.29
+Binance staked ETH, TVL: $3749790881.08
+Base Bridge, TVL: $3726721302.43
+Pendle, TVL: $3191702531.53
+Morpho Blue, TVL: $2824388156.90
+Uniswap V3, TVL: $2818216404.97
+Polygon Bridge & Staking, TVL: $2516829728.38
+Royco Protocol, TVL: $2451173645.05
+Veda, TVL: $2291336751.19
+SparkLend, TVL: $2197008361.56
+Jito Liquid Staking, TVL: $2076041880.26
+Optimism Bridge, TVL: $1949144617.55
+
+Inflow and Outflow:
+Top Chains by Inflow:
+Solana: TVL Change 1D: $219,786,073.00
+Binance: TVL Change 1D: $212,592.00
+Harmony: TVL Change 1D: $0.00
+Ink: TVL Change 1D: $0.00
+Aurora: TVL Change 1D: $0.00
+
+Top Chains by Outflow:
+Harmony: TVL Change 1D: $0.00
+Ink: TVL Change 1D: $0.00
+Aurora: TVL Change 1D: $0.00
+Celo: TVL Change 1D: $0.00
+Kava: TVL Change 1D: $0.00
+
+Hot News:
+Pump.fun brings back livestreaming after suspending it for disturbing meme coin content - https://cryptopanic.com/news/20928062/Pumpfun-brings-back-livestreaming-after-suspending-it-for-disturbing-meme-coin-content?mtm_campaign=API-OFA
+The future of DeFi isn’t on Ethereum — it’s on Bitcoin - https://cryptopanic.com/news/20926706/The-future-of-DeFi-isnt-on-Ethereum-its-on-Bitcoin?mtm_campaign=API-OFA
+Signs point to approval of Solana ETFs in May - https://cryptopanic.com/news/20924218/Signs-point-to-approval-of-Solana-ETFs-in-May?mtm_campaign=API-OFA
+Ethereum developers aim for May 7 mainnet deployment of Pectra upgrade - https://cryptopanic.com/news/20921035/Ethereum-developers-aim-for-May-7-mainnet-deployment-of-Pectra-upgrade?mtm_campaign=API-OFA
+Ethereum whales accumulate 130,000 ETH amid price drop - https://cryptopanic.com/news/20917718/Ethereum-whales-accumulate-130000-ETH-amid-price-drop?mtm_campaign=API-OFA
+Ethereum's Pectra Upgrade Set for May Following Technical Hurdles - https://cryptopanic.com/news/20917629/Ethereums-Pectra-Upgrade-Set-for-May-Following-Technical-Hurdles?mtm_campaign=API-OFA
+Analyst Warns of Massive Ethereum Drop Against Bitcoin - https://cryptopanic.com/news/20917668/Analyst-Warns-of-Massive-Ethereum-Drop-Against-Bitcoin?mtm_campaign=API-OFA
+Ethereum faces a storm: Could the crypto giant plummet by 91%? - https://cryptopanic.com/news/20916737/Ethereum-faces-a-storm-Could-the-crypto-giant-plummet-by-91?mtm_campaign=API-OFA
+Trader Says Ethereum Headed for a Massive Crash Against Bitcoin As Bearish Pattern Forms – Here’s His Outlook - https://cryptopanic.com/news/20915649/Trader-Says-Ethereum-Headed-for-a-Massive-Crash-Against-Bitcoin-As-Bearish-Pattern-Forms-Heres-His-Outlook?mtm_campaign=API-OFA
+Trump imposes global tarrifs - https://cryptopanic.com/news/20914832/Trump-imposes-global-tarrifs?mtm_campaign=API-OFA

@@ -1,0 +1,68 @@
+Crypto Market Report - 2025-01-23
+
+The Maxis:
+Bitcoin (BTC): Current Price $101919 | 24-Hour Change: -2.73%
+Ethereum (ETH): Current Price $3222.15 | 24-Hour Change: -2.39%
+
+Top Movers (Last 24 Hours, Top 500 MC):
+KuCoin (kcs): Current Price $11.98 | 24-Hour Change: 5.42%
+Gate (gt): Current Price $23.19 | 24-Hour Change: 5.07%
+XDC Network (xdc): Current Price $0.117356 | 24-Hour Change: 4.07%
+Ethereum Classic (etc): Current Price $27.39 | 24-Hour Change: 2.68%
+Pudgy Penguins (pengu): Current Price $0.02397405 | 24-Hour Change: 2.56%
+
+Aggregate Market Capitalizations:
+L1: $2,833,890,448,744.02
+L2: $26,082,967,259.63
+Gaming: $20,412,122,737.47
+DeFi: $120,570,231,901.31
+AI: $42,150,228,671.42
+RWA: $36,890,523,185.47
+Stablecoins: $220,429,191,729.94
+Solana Meme: $22,446,986,730.32
+AI Agent: $13,166,754,539.04
+DePIN: $29,614,619,437.63
+
+TVL Data (Top TVLs):
+Lido, TVL: $30777705794.45
+AAVE V3, TVL: $20511388991.95
+EigenLayer, TVL: $14220814681.53
+Arbitrum Bridge, TVL: $8128700348.88
+ether.fi Stake, TVL: $7209996475.94
+Binance staked ETH, TVL: $6484286892.47
+Base Bridge, TVL: $5919073855.74
+JustLend, TVL: $5867805947.00
+Babylon, TVL: $5767988127.44
+Ethena USDe, TVL: $5745203707.55
+Pendle, TVL: $5155835702.88
+MakerDAO, TVL: $4738770809.04
+Optimism Bridge, TVL: $4015391603.95
+Uniswap V3, TVL: $3623877540.42
+Jito, TVL: $3569318475.20
+Morpho Blue, TVL: $3522607334.51
+Spark, TVL: $3455502789.09
+Polygon Bridge & Staking, TVL: $2943483314.25
+Raydium, TVL: $2811580886.78
+Rocket Pool, TVL: $2389165247.50
+
+Inflow and Outflow:
+Top Chains by Inflow:
+EOS EVM: TVL Change 1D: $12,250,646.48
+Morph: TVL Change 1D: $4,973,703.93
+XDC: TVL Change 1D: $1,616,031.18
+Eclipse: TVL Change 1D: $1,035,496.90
+Sei: TVL Change 1D: $909,463.52
+
+Top Chains by Outflow:
+Ethereum: TVL Change 1D: $-1,772,691,529.66
+Solana: TVL Change 1D: $-569,901,023.15
+Hyperliquid: TVL Change 1D: $-339,468,940.44
+Zircuit: TVL Change 1D: $-253,495,437.06
+Bitcoin: TVL Change 1D: $-213,723,711.05
+
+Hot News:
+Ethereum Launches Etherealize to Bridge Blockchain and Finance - https://cryptopanic.com/news/20592630/Ethereum-Launches-Etherealize-to-Bridge-Blockchain-and-Finance?mtm_campaign=API-OFA
+CME website hints at XRP, SOL futures debut in February - https://cryptopanic.com/news/20590634/CME-website-hints-at-XRP-SOL-futures-debut-in-February?mtm_campaign=API-OFA
+Donald Trump’s World Liberty Financial Becomes Top 0.1% Holder of Staked Ethereum After Massive Accumulation - https://cryptopanic.com/news/20590536/Donald-Trumps-World-Liberty-Financial-Becomes-Top-01-Holder-of-Staked-Ethereum-After-Massive-Accumulation?mtm_campaign=API-OFA
+BlackRock CEO Says Bitcoin Could Reach $700,000 Amid Economic Instability - https://cryptopanic.com/news/20589339/BlackRock-CEO-Says-Bitcoin-Could-Reach-700000-Amid-Economic-Instability?mtm_campaign=API-OFA
+Trump family may build ‘giant businesses’ on Ethereum — Lubin - https://cryptopanic.com/news/20588650/Trump-family-may-build-giant-businesses-on-Ethereum-Lubin?mtm_campaign=API-OFA

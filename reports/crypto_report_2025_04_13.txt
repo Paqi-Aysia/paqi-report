@@ -1,0 +1,73 @@
+Crypto Market Report - 2025-04-13
+
+The Maxis:
+Bitcoin (BTC): Current Price $83642 | 24-Hour Change: -1.94%
+Ethereum (ETH): Current Price $1595.71 | 24-Hour Change: -2.95%
+
+Top Movers (Last 24 Hours, Top 500 MC):
+Flare (flr): $0.0164876 | 24-Hour Change: 5.16%
+Pi Network (pi): $0.738636 | 24-Hour Change: 3.42%
+TRON (trx): $0.254344 | 24-Hour Change: 3.35%
+Tokenize Xchange (tkx): $33.63 | 24-Hour Change: 2.29%
+Artificial Superintelligence Alliance (fet): $0.495982 | 24-Hour Change: 2.17%
+
+Aggregate Market Capitalizations:
+L1: $2,152,139,251,764.54
+L2: $12,349,619,049.52
+Gaming: $10,245,161,527.30
+DeFi: $82,572,760,585.81
+AI: $20,720,518,561.41
+RWA: $34,775,966,148.07
+Stablecoins: $235,757,573,916.60
+Solana Meme: $6,833,883,500.76
+AI Agent: $3,905,645,701.58
+DePIN: $15,895,141,508.09
+
+TVL Data (Top TVLs):
+AAVE V3, TVL: $17202490402.48
+Lido, TVL: $14715703211.27
+EigenLayer, TVL: $7374976565.28
+Sky Lending, TVL: $5656851640.19
+Ethena USDe, TVL: $4991083583.82
+Babylon, TVL: $4104351084.01
+ether.fi Stake, TVL: $3799364763.60
+JustLend, TVL: $3701821396.04
+Arbitrum Bridge, TVL: $3684554914.07
+Base Bridge, TVL: $3342070402.47
+Binance staked ETH, TVL: $3339185872.06
+Pendle, TVL: $2901836165.72
+Morpho Blue, TVL: $2527396060.36
+Uniswap V3, TVL: $2506423653.68
+Royco Protocol, TVL: $2378782160.19
+BlackRock BUIDL, TVL: $2372114508.00
+Polygon Bridge & Staking, TVL: $2344241223.29
+Spark Liquidity Layer, TVL: $2186902947.20
+Jito Liquid Staking, TVL: $2153978494.57
+Veda, TVL: $2131771213.85
+
+Inflow and Outflow:
+Top Chains by Inflow:
+Solana: TVL Change 1D: $323,911.00
+Binance: TVL Change 1D: $212,592.00
+Harmony: TVL Change 1D: $0.00
+Aurora: TVL Change 1D: $0.00
+Ink: TVL Change 1D: $0.00
+
+Top Chains by Outflow:
+Harmony: TVL Change 1D: $0.00
+Aurora: TVL Change 1D: $0.00
+Ink: TVL Change 1D: $0.00
+Celo: TVL Change 1D: $0.00
+X Layer: TVL Change 1D: $0.00
+
+Hot News:
+Saylor signals new Bitcoin buy after Strategy reports nearly $6 billion Q1 unrealized loss - https://cryptopanic.com/news/21056879/Saylor-signals-new-Bitcoin-buy-after-Strategy-reports-nearly-6-billion-Q1-unrealized-loss?mtm_campaign=API-OFA
+🇺🇸 SENATOR LUMMIS: Buying 1m Bitcoin and holding it for 20 years will halve the US government debt. - https://cryptopanic.com/news/21056882/SENATOR-LUMMIS-Buying-1m-Bitcoin-and-holding-it-for-20-years-will-halve-the-US-government-debt?mtm_campaign=API-OFA
+Ethereum Price Eyes $2,000 Breakout, Stablecoin Activity Hits All-Time High - https://cryptopanic.com/news/21051549/Ethereum-Price-Eyes-2000-Breakout-Stablecoin-Activity-Hits-All-Time-High?mtm_campaign=API-OFA
+On-Chain Indicator Suggests Ethereum (ETH) Could Be Undervalued, According to Crypto Analyst - https://cryptopanic.com/news/21050521/On-Chain-Indicator-Suggests-Ethereum-ETH-Could-Be-Undervalued-According-to-Crypto-Analyst?mtm_campaign=API-OFA
+US States Push Forward on Pro-Crypto Legislation - https://cryptopanic.com/news/21048782/US-States-Push-Forward-on-Pro-Crypto-Legislation?mtm_campaign=API-OFA
+Will Trump's Solana Meme Coin Pump or Dump After 40 Million Tokens Are Unlocked? - https://cryptopanic.com/news/21038244/Will-Trumps-Solana-Meme-Coin-Pump-or-Dump-After-40-Million-Tokens-Are-Unlocked?mtm_campaign=API-OFA
+Sweden: proposal to include Bitcoin in national reserves - https://cryptopanic.com/news/21035441/Sweden-proposal-to-include-Bitcoin-in-national-reserves?mtm_campaign=API-OFA
+ETH/BTC Collapse Isn’t the End: Analyst Sees Silent Rebuild - https://cryptopanic.com/news/21033208/ETHBTC-Collapse-Isnt-the-End-Analyst-Sees-Silent-Rebuild?mtm_campaign=API-OFA
+Trump Becomes First President to Sign Crypto Bill Into Law, Ending Anti-DeFi IRS Rule - https://cryptopanic.com/news/21026509/Trump-Becomes-First-President-to-Sign-Crypto-Bill-Into-Law-Ending-Anti-DeFi-IRS-Rule?mtm_campaign=API-OFA
+Trump signs resolution overturning IRS DeFi broker rule - https://cryptopanic.com/news/21026394/Trump-signs-resolution-overturning-IRS-DeFi-broker-rule?mtm_campaign=API-OFA

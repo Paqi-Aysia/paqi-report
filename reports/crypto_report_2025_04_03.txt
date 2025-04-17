@@ -1,0 +1,73 @@
+Crypto Market Report - 2025-04-03
+
+The Maxis:
+Bitcoin (BTC): Current Price $82977 | 24-Hour Change: -0.32%
+Ethereum (ETH): Current Price $1809.56 | 24-Hour Change: -0.63%
+
+Top Movers (Last 24 Hours, Top 500 MC):
+Cosmos Hub (atom): $4.63 | 24-Hour Change: 6.88%
+EOS (eos): $0.852195 | 24-Hour Change: 4.25%
+NEXO (nexo): $1.059 | 24-Hour Change: 1.97%
+Quant (qnt): $67.98 | 24-Hour Change: 1.94%
+MANTRA (om): $6.4 | 24-Hour Change: 1.04%
+
+Aggregate Market Capitalizations:
+L1: $2,174,098,222,154.21
+L2: $12,990,740,211.30
+Gaming: $10,551,065,167.77
+DeFi: $84,405,709,903.15
+AI: $20,806,378,448.65
+RWA: $31,863,265,470.79
+Stablecoins: $238,112,974,889.52
+Solana Meme: $6,441,571,707.16
+AI Agent: $3,693,160,280.10
+DePIN: $15,467,003,102.37
+
+TVL Data (Top TVLs):
+Lido, TVL: $17029149369.22
+AAVE V3, TVL: $17007650178.89
+EigenLayer, TVL: $8336897676.29
+Sky Lending, TVL: $7088083794.71
+Ethena USDe, TVL: $5250724466.65
+ether.fi Stake, TVL: $4449149872.40
+Babylon, TVL: $4282554364.22
+Arbitrum Bridge, TVL: $4021264465.35
+JustLend, TVL: $3837925333.49
+Binance staked ETH, TVL: $3736377176.20
+Base Bridge, TVL: $3714411127.84
+Pendle, TVL: $3155152575.69
+Morpho Blue, TVL: $2832784383.41
+Uniswap V3, TVL: $2692233796.95
+Polygon Bridge & Staking, TVL: $2502201056.91
+Royco Protocol, TVL: $2435172088.11
+Veda, TVL: $2284842264.32
+SparkLend, TVL: $2214431249.09
+Jito, TVL: $1978259050.37
+Optimism Bridge, TVL: $1927021636.85
+
+Inflow and Outflow:
+Top Chains by Inflow:
+Bitlayer: TVL Change 1D: $3,310,576.00
+Hyperliquid L1: TVL Change 1D: $883,359.00
+Binance: TVL Change 1D: $212,592.00
+Movement: TVL Change 1D: $3.00
+Harmony: TVL Change 1D: $0.00
+
+Top Chains by Outflow:
+Ethereum: TVL Change 1D: $-10,200,844.00
+Harmony: TVL Change 1D: $0.00
+Celo: TVL Change 1D: $0.00
+X Layer: TVL Change 1D: $0.00
+Ink: TVL Change 1D: $0.00
+
+Hot News:
+Ethereum whales accumulate 130,000 ETH amid price drop - https://cryptopanic.com/news/20917718/Ethereum-whales-accumulate-130000-ETH-amid-price-drop?mtm_campaign=API-OPA
+Ethereum's Pectra Upgrade Set for May Following Technical Hurdles - https://cryptopanic.com/news/20917629/Ethereums-Pectra-Upgrade-Set-for-May-Following-Technical-Hurdles?mtm_campaign=API-OPA
+Analyst Warns of Massive Ethereum Drop Against Bitcoin - https://cryptopanic.com/news/20917668/Analyst-Warns-of-Massive-Ethereum-Drop-Against-Bitcoin?mtm_campaign=API-OPA
+Ethereum faces a storm: Could the crypto giant plummet by 91%? - https://cryptopanic.com/news/20916737/Ethereum-faces-a-storm-Could-the-crypto-giant-plummet-by-91?mtm_campaign=API-OPA
+Trader Says Ethereum Headed for a Massive Crash Against Bitcoin As Bearish Pattern Forms – Here’s His Outlook - https://cryptopanic.com/news/20915649/Trader-Says-Ethereum-Headed-for-a-Massive-Crash-Against-Bitcoin-As-Bearish-Pattern-Forms-Heres-His-Outlook?mtm_campaign=API-OPA
+Trump imposes global tarrifs - https://cryptopanic.com/news/20914832/Trump-imposes-global-tarrifs?mtm_campaign=API-OPA
+Ethereum price may have bottomed, but pro traders show little interest in buying ETH - https://cryptopanic.com/news/20912712/Ethereum-price-may-have-bottomed-but-pro-traders-show-little-interest-in-buying-ETH?mtm_campaign=API-OPA
+Kraken Announces Support for RLUSD As Stablecoin Integrates Into Ripple’s Payment’s Network - https://cryptopanic.com/news/20912158/Kraken-Announces-Support-for-RLUSD-As-Stablecoin-Integrates-Into-Ripples-Payments-Network?mtm_campaign=API-OPA
+Pump.fun launches lending platform to finance memecoin buys - https://cryptopanic.com/news/20912077/Pumpfun-launches-lending-platform-to-finance-memecoin-buys?mtm_campaign=API-OPA
+Ethereum Whale Activity Plummets as Large Transactions Drop 63.8% Since Late February - https://cryptopanic.com/news/20911830/Ethereum-Whale-Activity-Plummets-as-Large-Transactions-Drop-638-Since-Late-February?mtm_campaign=API-OPA

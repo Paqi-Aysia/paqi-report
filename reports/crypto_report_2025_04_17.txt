@@ -1,0 +1,73 @@
+Crypto Market Report - 2025-04-17
+
+The Maxis:
+Bitcoin (BTC): Current Price $84932 | 24-Hour Change: 0.46%
+Ethereum (ETH): Current Price $1585.94 | 24-Hour Change: -0.20%
+
+Top Movers (Last 24 Hours, Top 500 MC):
+Render (render): $4.05 | 24-Hour Change: 9.64%
+Artificial Superintelligence Alliance (fet): $0.499927 | 24-Hour Change: 7.90%
+Bittensor (tao): $248.38 | 24-Hour Change: 7.51%
+Bitcoin Cash (bch): $337.73 | 24-Hour Change: 4.66%
+Hyperliquid (hype): $16.79 | 24-Hour Change: 4.58%
+
+Aggregate Market Capitalizations:
+L1: $2,182,037,442,907.16
+L2: $12,062,767,845.46
+Gaming: $10,183,151,780.06
+DeFi: $83,223,794,317.64
+AI: $20,849,815,525.48
+RWA: $34,590,937,163.42
+Stablecoins: $236,705,147,338.89
+Solana Meme: $6,786,289,550.16
+AI Agent: $3,893,697,451.47
+DePIN: $15,912,048,776.61
+
+TVL Data (Top TVLs):
+AAVE V3, TVL: $17686343891.38
+Lido, TVL: $14717702539.62
+EigenLayer, TVL: $7074062040.82
+Sky Lending, TVL: $5656947483.94
+Ethena USDe, TVL: $4838478854.21
+ether.fi Stake, TVL: $3805878290.34
+Arbitrum Bridge, TVL: $3709681366.98
+JustLend, TVL: $3666781002.45
+Base Bridge, TVL: $3372885418.35
+Binance staked ETH, TVL: $3349838195.48
+Pendle, TVL: $2864493891.86
+Babylon, TVL: $2676025682.93
+Morpho Blue, TVL: $2565983473.74
+Uniswap V3, TVL: $2521652141.17
+Royco Protocol, TVL: $2400420070.23
+BlackRock BUIDL, TVL: $2397694471.11
+Spark Liquidity Layer, TVL: $2359309070.03
+Polygon Bridge & Staking, TVL: $2348059660.60
+Jito Liquid Staking, TVL: $2280791357.88
+Veda, TVL: $2153495611.89
+
+Inflow and Outflow:
+Top Chains by Inflow:
+Base: TVL Change 1D: $3,409,464.00
+OP Mainnet: TVL Change 1D: $1,088,475.00
+Optimism: TVL Change 1D: $1,088,475.00
+Saga: TVL Change 1D: $695,097.00
+Ethereum: TVL Change 1D: $212,747.00
+
+Top Chains by Outflow:
+Harmony: TVL Change 1D: $0.00
+Aurora: TVL Change 1D: $0.00
+X Layer: TVL Change 1D: $0.00
+Corn: TVL Change 1D: $0.00
+Celo: TVL Change 1D: $0.00
+
+Hot News:
+North Carolina: proposal advances to invest 10% of public funds in Bitcoin - https://cryptopanic.com/news/21121304/North-Carolina-proposal-advances-to-invest-10-of-public-funds-in-Bitcoin?mtm_campaign=API-OFA
+Ethereum Is What Bitcoin Was Meant to Be - https://cryptopanic.com/news/21110810/Ethereum-Is-What-Bitcoin-Was-Meant-to-Be?mtm_campaign=API-OFA
+Vitalik Buterin: Why Privacy Must Be a Top Priority in Blockchain Development - https://cryptopanic.com/news/21110655/Vitalik-Buterin-Why-Privacy-Must-Be-a-Top-Priority-in-Blockchain-Development?mtm_campaign=API-OFA
+Trump goes after Harvard’s tax-exempt status as standoff escalates - https://cryptopanic.com/news/21091813/Trump-goes-after-Harvards-tax-exempt-status-as-standoff-escalates?mtm_campaign=API-OFA
+Trump Considers Ban on Congressional Insider Trading - https://cryptopanic.com/news/21091719/Trump-Considers-Ban-on-Congressional-Insider-Trading?mtm_campaign=API-OFA
+OpenAI is building its own social network to rival Elon Musk’s X - https://cryptopanic.com/news/21091172/OpenAI-is-building-its-own-social-network-to-rival-Elon-Musks-X?mtm_campaign=API-OFA
+Canada to launch world’s first spot Solana ETFs, pioneering staking mechanism on April 16, 2025 - https://cryptopanic.com/news/21081018/Canada-to-launch-worlds-first-spot-Solana-ETFs-pioneering-staking-mechanism-on-April-16-2025?mtm_campaign=API-OFA
+Canada to approve SOL ETFs with staking functions as SEC postpones staking function for Grayscale spot ETH ETF - https://cryptopanic.com/news/21076936/Canada-to-approve-SOL-ETFs-with-staking-functions-as-SEC-postpones-staking-function-for-Grayscale-spot-ETH-ETF?mtm_campaign=API-OFA
+Canada Set to Launch World’s First Spot Solana ETFs on April 16 - https://cryptopanic.com/news/21076059/Canada-Set-to-Launch-Worlds-First-Spot-Solana-ETFs-on-April-16?mtm_campaign=API-OFA
+Solana rallies 20% against Ethereum, but is $300 SOL price within reach? - https://cryptopanic.com/news/21072668/Solana-rallies-20-against-Ethereum-but-is-300-SOL-price-within-reach?mtm_campaign=API-OFA

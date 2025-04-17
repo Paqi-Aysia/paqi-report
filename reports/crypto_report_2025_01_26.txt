@@ -1,0 +1,68 @@
+Crypto Market Report - 2025-01-26
+
+The Maxis:
+Bitcoin (BTC): Current Price $101065 | 24-Hour Change: -3.43%
+Ethereum (ETH): Current Price $3170.37 | 24-Hour Change: -4.65%
+
+Top Movers (Last 24 Hours, Top 500 MC):
+Jupiter (jup): Current Price $1.016 | 24-Hour Change: 8.71%
+Pudgy Penguins (pengu): Current Price $0.02385395 | 24-Hour Change: 3.43%
+Lido DAO (ldo): Current Price $2.05 | 24-Hour Change: 3.06%
+Movement (move): Current Price $0.714675 | 24-Hour Change: 1.77%
+Bittensor (tao): Current Price $418.72 | 24-Hour Change: 0.88%
+
+Aggregate Market Capitalizations:
+L1: $2,793,810,431,004.75
+L2: $24,851,617,513.52
+Gaming: $19,238,115,191.26
+DeFi: $117,393,294,815.93
+AI: $37,953,591,739.33
+RWA: $37,050,900,620.63
+Stablecoins: $221,617,437,338.56
+Solana Meme: $18,487,956,154.47
+AI Agent: $10,250,815,413.44
+DePIN: $28,539,077,112.14
+
+TVL Data (Top TVLs):
+Lido, TVL: $30707053555.46
+AAVE V3, TVL: $20782239960.57
+EigenLayer, TVL: $14050586289.01
+Arbitrum Bridge, TVL: $7667163403.05
+ether.fi Stake, TVL: $7202627109.94
+Binance staked ETH, TVL: $6520512182.10
+JustLend, TVL: $5855070385.90
+Babylon, TVL: $5765559682.03
+Ethena USDe, TVL: $5763342970.96
+Base Bridge, TVL: $5718791261.81
+Pendle, TVL: $5286076486.90
+MakerDAO, TVL: $4731798297.06
+Optimism Bridge, TVL: $3890746051.85
+Uniswap V3, TVL: $3650286014.62
+Morpho Blue, TVL: $3646265217.75
+Jito, TVL: $3621589404.27
+Spark, TVL: $3474387566.81
+Polygon Bridge & Staking, TVL: $2981812483.07
+Raydium, TVL: $2909365681.00
+Rocket Pool, TVL: $2398666931.99
+
+Inflow and Outflow:
+Top Chains by Inflow:
+Sonic: TVL Change 1D: $17,763,163.54
+Kaia: TVL Change 1D: $7,727,588.94
+Soneium: TVL Change 1D: $3,622,013.27
+Filecoin: TVL Change 1D: $1,790,232.20
+re.al: TVL Change 1D: $172,009.51
+
+Top Chains by Outflow:
+Ethereum: TVL Change 1D: $-1,931,533,710.77
+Solana: TVL Change 1D: $-357,559,434.88
+Tron: TVL Change 1D: $-222,624,276.70
+Bitcoin: TVL Change 1D: $-216,574,787.67
+BSC: TVL Change 1D: $-134,383,869.99
+
+Hot News:
+Solana Price Plummets 6.21%: $14.98 Million Liquidated in 24 Hours - https://cryptopanic.com/news/20607458/Solana-Price-Plummets-621-1498-Million-Liquidated-in-24-Hours?mtm_campaign=API-OFA
+Dogecoin Appears Poised For Explosive 10,000%  Gain – Analyst - https://cryptopanic.com/news/20607366/Dogecoin-Appears-Poised-For-Explosive-10000-Gain-Analyst?mtm_campaign=API-OFA
+Bullish chart pattern hints XRP to hit $9 - https://cryptopanic.com/news/20606902/Bullish-chart-pattern-hints-XRP-to-hit-9?mtm_campaign=API-OFA
+Ripple [XRP] caught in the fire as U.S. digital reserve plan divides community - https://cryptopanic.com/news/20606654/Ripple-XRP-caught-in-the-fire-as-US-digital-reserve-plan-divides-community?mtm_campaign=API-OFA
+XRP Rich List: Top 20 Wallets Control Over 50% Of Supply, But Who’s Number 1? - https://cryptopanic.com/news/20605556/XRP-Rich-List-Top-20-Wallets-Control-Over-50-Of-Supply-But-Whos-Number-1?mtm_campaign=API-OFA
