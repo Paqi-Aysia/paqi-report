@@ -264,8 +264,10 @@ def generate_daily_report():
         import traceback
         print("❌ Error generating report:")
         traceback.print_exc()
+        import sys
+        sys.stdout.flush()  # <---- force logs to flush
         return jsonify({"status": "error", "message": str(e)}), 500
-
+    
 if __name__ == "__main__":
     # Only run backfill if the accumulated data doesn't exist or is empty
     if not os.path.exists("data/accumulated.json") or os.stat("data/accumulated.json").st_size == 0:
