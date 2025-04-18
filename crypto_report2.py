@@ -173,9 +173,9 @@ def save_report(report):
         f.write(report)
     logging.info(f"Report saved to {path}")
 
-def save_structured_data(new_data, path="data/accumulated.json"):
-    if not os.path.exists("data"):
-        os.makedirs("data")
+def save_structured_data(new_data, path="static/data/accumulated.json"):
+    if not os.path.exists("static/data"):
+        os.makedirs("static/data")
 
     if os.path.exists(path):
         with open(path, "r") as f:
@@ -243,12 +243,22 @@ def contact():
 
 @app.route("/accumulated-data")
 def accumulated_data():
-    path = "data/accumulated.json"
+    path = "static/data/accumulated.json"
     if os.path.exists(path):
         with open(path, "r") as f:
             data = json.load(f)
         return jsonify({"status": "success", "data": data})
     return jsonify({"status": "error", "message": "No accumulated data found."})
+
+@app.route("/generate-daily-report", methods=["POST"])
+def generate_daily_report():
+    try:
+        report, structured_data = generate_report()
+        save_report(report)
+        save_structured_data(structured_data)
+        return jsonify({"status": "success", "message": "Daily report generated."})
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)})
 
 if __name__ == "__main__":
     # Only run backfill if the accumulated data doesn't exist or is empty
