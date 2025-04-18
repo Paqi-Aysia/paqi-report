@@ -253,12 +253,18 @@ def accumulated_data():
 @app.route("/generate-daily-report", methods=["POST"])
 def generate_daily_report():
     try:
+        print("📩 /generate-daily-report triggered")
         report, structured_data = generate_report()
+        print(f"📝 Report generated for {structured_data['date']}")
         save_report(report)
         save_structured_data(structured_data)
+        print("✅ Data saved successfully")
         return jsonify({"status": "success", "message": "Daily report generated."})
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e)})
+        import traceback
+        print("❌ Error generating report:")
+        traceback.print_exc()
+        return jsonify({"status": "error", "message": str(e)}), 500
 
 if __name__ == "__main__":
     # Only run backfill if the accumulated data doesn't exist or is empty
