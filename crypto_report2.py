@@ -81,8 +81,19 @@ def get_chain_inflow_outflow():
 def get_crypto_news():
     url = "https://cryptopanic.com/api/v1/posts/"
     token = os.getenv("CRYPTOPANIC_TOKEN")
+    if not token:
+        print("❗CRYPTO PANIC TOKEN NOT FOUND")
+    else:
+        print("🔑 CryptoPanic token loaded")
+
     params = {"auth_token": token, "public": "true", "filter": "hot"}
     res = fetch_json(url, params)
+    
+    if not res:
+        print("❗No response from CryptoPanic")
+    else:
+        print(f"📰 CryptoPanic returned {len(res.get('results', []))} articles")
+
     return res.get("results", []) if res else []
 
 # --- REPORT GENERATION ---
