@@ -270,12 +270,17 @@ def generate_daily_report():
     
 if __name__ == "__main__":
     # Only run backfill if the accumulated data doesn't exist or is empty
-    if not os.path.exists("data/accumulated.json") or os.stat("data/accumulated.json").st_size == 0:
-        try:
-            print("Running one-time backfill...")
+    try:
+        if not os.path.exists("data/accumulated.json") or os.stat("data/accumulated.json").st_size == 0:
+            print("📦 Running one-time backfill...")
             run_backfill()
-        except Exception as e:
-            logging.warning(f"Backfill failed: {e}")
+            print("✅ Backfill completed.")
+    except Exception as e:
+        import traceback
+        print("❌ Backfill failed:")
+        traceback.print_exc()
+        import sys
+        sys.stdout.flush()
 
     main()
     app.run(host="0.0.0.0", port=5001, debug=True)
