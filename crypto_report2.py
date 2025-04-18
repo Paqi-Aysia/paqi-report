@@ -173,9 +173,9 @@ def save_report(report):
         f.write(report)
     logging.info(f"Report saved to {path}")
 
-def save_structured_data(new_data, path="static/data/accumulated.json"):
-    if not os.path.exists("static/data"):
-        os.makedirs("static/data")
+def save_structured_data(new_data, path="data/accumulated.json"):
+    if not os.path.exists("data"):
+        os.makedirs("data")
 
     if os.path.exists(path):
         with open(path, "r") as f:
@@ -243,7 +243,7 @@ def contact():
 
 @app.route("/accumulated-data")
 def accumulated_data():
-    path = "static/data/accumulated.json"
+    path = "data/accumulated.json"
     if os.path.exists(path):
         with open(path, "r") as f:
             data = json.load(f)
