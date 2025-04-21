@@ -15958,5 +15958,1627 @@
       "Canada Set to Launch World\u2019s First Spot Solana ETFs on April 16",
       "On-Chain Indicator Suggests Ethereum (ETH) Could Be Undervalued, According to Crypto Analyst"
     ]
+  },
+  {
+    "date": "2025-04-18",
+    "maxis": {
+      "BTC": 84489,
+      "ETH": 1588.96
+    },
+    "top_movers": [
+      {
+        "name": "Bittensor",
+        "symbol": "tao",
+        "price": 264.23,
+        "change_24h": 14.15896
+      },
+      {
+        "name": "Flare",
+        "symbol": "flr",
+        "price": 0.01661813,
+        "change_24h": 14.03757
+      },
+      {
+        "name": "Artificial Superintelligence Alliance",
+        "symbol": "fet",
+        "price": 0.50457,
+        "change_24h": 9.27817
+      },
+      {
+        "name": "Immutable",
+        "symbol": "imx",
+        "price": 0.435475,
+        "change_24h": 7.78915
+      },
+      {
+        "name": "Filecoin",
+        "symbol": "fil",
+        "price": 2.48,
+        "change_24h": 5.92196
+      }
+    ],
+    "market_caps": {
+      "L1": 2173864315729.822,
+      "L2": 12211650273.412374,
+      "Gaming": 10331894046.487627,
+      "DeFi": 83235063223.58508,
+      "AI": 21027404919.035984,
+      "RWA": 34699851806.983826,
+      "Stablecoins": 236781982853.10605,
+      "Solana Meme": 6747973168.0351095,
+      "AI Agent": 3900946306.1301036,
+      "DePIN": 16167862501.0863
+    },
+    "tvl_data": [
+      {
+        "name": "AAVE V3",
+        "tvl": 17617899639.370445
+      },
+      {
+        "name": "Lido",
+        "tvl": 14769910303.830944
+      },
+      {
+        "name": "EigenLayer",
+        "tvl": 6985178376.104711
+      },
+      {
+        "name": "Sky Lending",
+        "tvl": 5550098464.405529
+      },
+      {
+        "name": "Ethena USDe",
+        "tvl": 4831878084.21271
+      },
+      {
+        "name": "ether.fi Stake",
+        "tvl": 3824831626.07
+      },
+      {
+        "name": "Arbitrum Bridge",
+        "tvl": 3717154876.5020747
+      },
+      {
+        "name": "JustLend",
+        "tvl": 3599420163.109515
+      },
+      {
+        "name": "Base Bridge",
+        "tvl": 3372990439.1100698
+      },
+      {
+        "name": "Binance staked ETH",
+        "tvl": 3355257778.7619824
+      },
+      {
+        "name": "Pendle",
+        "tvl": 2852004440.7961764
+      },
+      {
+        "name": "Babylon",
+        "tvl": 2666732688.092029
+      },
+      {
+        "name": "Uniswap V3",
+        "tvl": 2533403381.2081165
+      },
+      {
+        "name": "Morpho Blue",
+        "tvl": 2520386479.760497
+      },
+      {
+        "name": "BlackRock BUIDL",
+        "tvl": 2397694471.1099997
+      },
+      {
+        "name": "Royco Protocol",
+        "tvl": 2391210197.4416595
+      },
+      {
+        "name": "Spark Liquidity Layer",
+        "tvl": 2360222140.906056
+      },
+      {
+        "name": "Polygon Bridge & Staking",
+        "tvl": 2336993207.8170447
+      },
+      {
+        "name": "Jito Liquid Staking",
+        "tvl": 2306899824.611351
+      },
+      {
+        "name": "Veda",
+        "tvl": 2165106839.328506
+      }
+    ],
+    "chain_flows": [
+      {
+        "name": "Harmony",
+        "tvlChange1d": 34536
+      },
+      {
+        "name": "Aurora",
+        "tvlChange1d": 349540
+      },
+      {
+        "name": "Corn",
+        "tvlChange1d": -138797
+      },
+      {
+        "name": "Mantle",
+        "tvlChange1d": -5945140
+      },
+      {
+        "name": "X Layer",
+        "tvlChange1d": -505275
+      },
+      {
+        "name": "Celo",
+        "tvlChange1d": 3047684
+      },
+      {
+        "name": "Sonic",
+        "tvlChange1d": -17444465
+      },
+      {
+        "name": "BSC",
+        "tvlChange1d": 91335294
+      },
+      {
+        "name": "Kava",
+        "tvlChange1d": -2054282
+      },
+      {
+        "name": "Ink",
+        "tvlChange1d": 254215
+      },
+      {
+        "name": "Gnosis",
+        "tvlChange1d": -1523830
+      },
+      {
+        "name": "Moonbeam",
+        "tvlChange1d": 218821
+      },
+      {
+        "name": "Fraxtal",
+        "tvlChange1d": 579145
+      },
+      {
+        "name": "Taiko",
+        "tvlChange1d": -5488989
+      },
+      {
+        "name": "Avalanche",
+        "tvlChange1d": 1363496
+      },
+      {
+        "name": "OP Mainnet",
+        "tvlChange1d": -4513661
+      },
+      {
+        "name": "Ethereum",
+        "tvlChange1d": -242938066
+      },
+      {
+        "name": "Fantom",
+        "tvlChange1d": 458431
+      },
+      {
+        "name": "Arbitrum",
+        "tvlChange1d": 26821436
+      },
+      {
+        "name": "Polygon",
+        "tvlChange1d": 10144107
+      },
+      {
+        "name": "Base",
+        "tvlChange1d": 9695347
+      },
+      {
+        "name": "Heco",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Telos",
+        "tvlChange1d": -99622
+      },
+      {
+        "name": "CORE",
+        "tvlChange1d": -52717331
+      },
+      {
+        "name": "SKALE Europa",
+        "tvlChange1d": 5913
+      },
+      {
+        "name": "Hemi",
+        "tvlChange1d": -12064497
+      },
+      {
+        "name": "Rootstock",
+        "tvlChange1d": -4671655
+      },
+      {
+        "name": "Blast",
+        "tvlChange1d": 424534
+      },
+      {
+        "name": "Bittorrent",
+        "tvlChange1d": 1849
+      },
+      {
+        "name": "Linea",
+        "tvlChange1d": 260510
+      },
+      {
+        "name": "Polygon zkEVM",
+        "tvlChange1d": 3142
+      },
+      {
+        "name": "HAQQ",
+        "tvlChange1d": -14296
+      },
+      {
+        "name": "ZetaChain",
+        "tvlChange1d": 237668
+      },
+      {
+        "name": "Palm",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Metis",
+        "tvlChange1d": 478033
+      },
+      {
+        "name": "ThunderCore",
+        "tvlChange1d": 13350
+      },
+      {
+        "name": "Scroll",
+        "tvlChange1d": 762181
+      },
+      {
+        "name": "Boba_Bnb",
+        "tvlChange1d": 1286
+      },
+      {
+        "name": "Fuse",
+        "tvlChange1d": -59
+      },
+      {
+        "name": "OKTChain",
+        "tvlChange1d": -8890
+      },
+      {
+        "name": "Moonriver",
+        "tvlChange1d": 378522
+      },
+      {
+        "name": "Boba",
+        "tvlChange1d": 19492
+      },
+      {
+        "name": "Arbitrum Nova",
+        "tvlChange1d": 3112
+      },
+      {
+        "name": "Filecoin",
+        "tvlChange1d": 1358667
+      },
+      {
+        "name": "Conflux",
+        "tvlChange1d": 133481
+      },
+      {
+        "name": "Velas",
+        "tvlChange1d": -249
+      },
+      {
+        "name": "Oasis Emerald",
+        "tvlChange1d": 13916
+      },
+      {
+        "name": "Cronos",
+        "tvlChange1d": 6534139
+      },
+      {
+        "name": "ZKsync Era",
+        "tvlChange1d": -4970
+      },
+      {
+        "name": "Binance",
+        "tvlChange1d": 212592
+      },
+      {
+        "name": "Solana",
+        "tvlChange1d": 77132379
+      },
+      {
+        "name": "Manta",
+        "tvlChange1d": -437250
+      },
+      {
+        "name": "Zircuit",
+        "tvlChange1d": -9292
+      },
+      {
+        "name": "HashKey Chain",
+        "tvlChange1d": 136533
+      },
+      {
+        "name": "Litecoin",
+        "tvlChange1d": 43599
+      },
+      {
+        "name": "Doge",
+        "tvlChange1d": 44651
+      },
+      {
+        "name": "IoTeX",
+        "tvlChange1d": 173168
+      },
+      {
+        "name": "KCC",
+        "tvlChange1d": 3919
+      },
+      {
+        "name": "Bitcoin",
+        "tvlChange1d": 5828799
+      },
+      {
+        "name": "Wanchain",
+        "tvlChange1d": 29697
+      },
+      {
+        "name": "Ontology",
+        "tvlChange1d": 95611
+      },
+      {
+        "name": "OntologyEVM",
+        "tvlChange1d": 147
+      },
+      {
+        "name": "Aptos",
+        "tvlChange1d": 4027926
+      },
+      {
+        "name": "opBNB",
+        "tvlChange1d": 166682
+      },
+      {
+        "name": "Ronin",
+        "tvlChange1d": 2184985
+      },
+      {
+        "name": "Evmos",
+        "tvlChange1d": 1529
+      },
+      {
+        "name": "Unichain",
+        "tvlChange1d": 115968827
+      },
+      {
+        "name": "Energi",
+        "tvlChange1d": 3042
+      },
+      {
+        "name": "Hedera",
+        "tvlChange1d": 3484374
+      },
+      {
+        "name": "Songbird",
+        "tvlChange1d": -11226
+      },
+      {
+        "name": "Flare",
+        "tvlChange1d": 3059681
+      },
+      {
+        "name": "Kaia",
+        "tvlChange1d": 40256
+      },
+      {
+        "name": "Bifrost Network",
+        "tvlChange1d": -220125
+      },
+      {
+        "name": "Terra Classic",
+        "tvlChange1d": 49035
+      },
+      {
+        "name": "Eclipse",
+        "tvlChange1d": -418883
+      },
+      {
+        "name": "Horizen EON",
+        "tvlChange1d": 35915
+      },
+      {
+        "name": "Zilliqa",
+        "tvlChange1d": 54968
+      },
+      {
+        "name": "NEO",
+        "tvlChange1d": 13526
+      },
+      {
+        "name": "Secret",
+        "tvlChange1d": 223312
+      },
+      {
+        "name": "BOB",
+        "tvlChange1d": -864775
+      },
+      {
+        "name": "Cube",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Astar",
+        "tvlChange1d": 518047
+      },
+      {
+        "name": "Bitgert",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Sifchain",
+        "tvlChange1d": 123
+      },
+      {
+        "name": "Canto",
+        "tvlChange1d": -23969
+      },
+      {
+        "name": "re.al",
+        "tvlChange1d": -15
+      },
+      {
+        "name": "REI",
+        "tvlChange1d": 571
+      },
+      {
+        "name": "Elastos",
+        "tvlChange1d": 9837
+      },
+      {
+        "name": "Nuls",
+        "tvlChange1d": 19024
+      },
+      {
+        "name": "Osmosis",
+        "tvlChange1d": 1342953
+      },
+      {
+        "name": "Shibarium",
+        "tvlChange1d": 332080
+      },
+      {
+        "name": "CosmosHub",
+        "tvlChange1d": 12784
+      },
+      {
+        "name": "Bitcoincash",
+        "tvlChange1d": 75662
+      },
+      {
+        "name": "Thorchain",
+        "tvlChange1d": 891560
+      },
+      {
+        "name": "Hoo",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Q Protocol",
+        "tvlChange1d": 119
+      },
+      {
+        "name": "Neon",
+        "tvlChange1d": -3626
+      },
+      {
+        "name": "Tron",
+        "tvlChange1d": -15328241
+      },
+      {
+        "name": "Archway",
+        "tvlChange1d": -260733
+      },
+      {
+        "name": "Injective",
+        "tvlChange1d": -1693869
+      },
+      {
+        "name": "Sui",
+        "tvlChange1d": 19549261
+      },
+      {
+        "name": "Stellar",
+        "tvlChange1d": 807081
+      },
+      {
+        "name": "Icon",
+        "tvlChange1d": 498626
+      },
+      {
+        "name": "Karura",
+        "tvlChange1d": 4441
+      },
+      {
+        "name": "Tezos",
+        "tvlChange1d": 295340
+      },
+      {
+        "name": "Terra2",
+        "tvlChange1d": 119231
+      },
+      {
+        "name": "Wax",
+        "tvlChange1d": 85478
+      },
+      {
+        "name": "EOS",
+        "tvlChange1d": 1846003
+      },
+      {
+        "name": "Etherlink",
+        "tvlChange1d": 1267604
+      },
+      {
+        "name": "Meter",
+        "tvlChange1d": 10437
+      },
+      {
+        "name": "Near",
+        "tvlChange1d": 3898034
+      },
+      {
+        "name": "DFS Network",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Genshiro",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Rollux",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Lamden",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Waves",
+        "tvlChange1d": -247318
+      },
+      {
+        "name": "Unit Zero",
+        "tvlChange1d": -5965
+      },
+      {
+        "name": "CLV",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Shiden",
+        "tvlChange1d": 853
+      },
+      {
+        "name": "EnergyWeb",
+        "tvlChange1d": 706
+      },
+      {
+        "name": "Algorand",
+        "tvlChange1d": 657643
+      },
+      {
+        "name": "GoChain",
+        "tvlChange1d": -50
+      },
+      {
+        "name": "HPB",
+        "tvlChange1d": -215
+      },
+      {
+        "name": "Fusion",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Viction",
+        "tvlChange1d": 142281
+      },
+      {
+        "name": "Kardia",
+        "tvlChange1d": -924
+      },
+      {
+        "name": "Sora",
+        "tvlChange1d": 71889
+      },
+      {
+        "name": "Radix",
+        "tvlChange1d": 1105619
+      },
+      {
+        "name": "Dogechain",
+        "tvlChange1d": 10588
+      },
+      {
+        "name": "Milkomeda C1",
+        "tvlChange1d": -1900
+      },
+      {
+        "name": "Cardano",
+        "tvlChange1d": -11677867
+      },
+      {
+        "name": "smartBCH",
+        "tvlChange1d": 129623
+      },
+      {
+        "name": "ZKsync Lite",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Empire",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Juno",
+        "tvlChange1d": 8091
+      },
+      {
+        "name": "Polis",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "ZYX",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "MultiversX",
+        "tvlChange1d": 2365604
+      },
+      {
+        "name": "Step",
+        "tvlChange1d": -237
+      },
+      {
+        "name": "Ubiq",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Mixin",
+        "tvlChange1d": 88653
+      },
+      {
+        "name": "Everscale",
+        "tvlChange1d": 163635
+      },
+      {
+        "name": "VeChain",
+        "tvlChange1d": 14643
+      },
+      {
+        "name": "GodwokenV1",
+        "tvlChange1d": 57691
+      },
+      {
+        "name": "Godwoken",
+        "tvlChange1d": 211
+      },
+      {
+        "name": "EthereumClassic",
+        "tvlChange1d": 9854
+      },
+      {
+        "name": "Callisto",
+        "tvlChange1d": 211
+      },
+      {
+        "name": "ApeChain",
+        "tvlChange1d": 335470
+      },
+      {
+        "name": "Stacks",
+        "tvlChange1d": 4986200
+      },
+      {
+        "name": "Echelon",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "CSC",
+        "tvlChange1d": 6970
+      },
+      {
+        "name": "XDC",
+        "tvlChange1d": 40742
+      },
+      {
+        "name": "Ergo",
+        "tvlChange1d": -42234
+      },
+      {
+        "name": "Nahmii",
+        "tvlChange1d": 101
+      },
+      {
+        "name": "DefiChain",
+        "tvlChange1d": 12218
+      },
+      {
+        "name": "Theta",
+        "tvlChange1d": 45738
+      },
+      {
+        "name": "Syscoin",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Equilibrium",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Acala",
+        "tvlChange1d": 60592
+      },
+      {
+        "name": "Neutron",
+        "tvlChange1d": 1116664
+      },
+      {
+        "name": "Proton",
+        "tvlChange1d": 160684
+      },
+      {
+        "name": "Kadena",
+        "tvlChange1d": 31379
+      },
+      {
+        "name": "Kujira",
+        "tvlChange1d": -35027
+      },
+      {
+        "name": "Goerli",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Vite",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Boba_Avax",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Abstract",
+        "tvlChange1d": 257921
+      },
+      {
+        "name": "Goat",
+        "tvlChange1d": 1446
+      },
+      {
+        "name": "Gravity",
+        "tvlChange1d": 92768
+      },
+      {
+        "name": "Morph",
+        "tvlChange1d": 389853
+      },
+      {
+        "name": "Sei",
+        "tvlChange1d": -16066608
+      },
+      {
+        "name": "Mode",
+        "tvlChange1d": 44101
+      },
+      {
+        "name": "Soneium",
+        "tvlChange1d": -1493505
+      },
+      {
+        "name": "Berachain",
+        "tvlChange1d": -10460007
+      },
+      {
+        "name": "Bahamut",
+        "tvlChange1d": -215250
+      },
+      {
+        "name": "Cronos zkEVM",
+        "tvlChange1d": -42199
+      },
+      {
+        "name": "BSquared",
+        "tvlChange1d": 48429151
+      },
+      {
+        "name": "Merlin",
+        "tvlChange1d": -18151622
+      },
+      {
+        "name": "zkLink Nova",
+        "tvlChange1d": 3869
+      },
+      {
+        "name": "TON",
+        "tvlChange1d": 1818384
+      },
+      {
+        "name": "DFK",
+        "tvlChange1d": 17413
+      },
+      {
+        "name": "Zora",
+        "tvlChange1d": 4836
+      },
+      {
+        "name": "Milkomeda A1",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Findora",
+        "tvlChange1d": 1
+      },
+      {
+        "name": "Hydra",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Obyte",
+        "tvlChange1d": -8661
+      },
+      {
+        "name": "Lachain",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "REIchain",
+        "tvlChange1d": 43
+      },
+      {
+        "name": "SX Network",
+        "tvlChange1d": 30
+      },
+      {
+        "name": "SX Rollup",
+        "tvlChange1d": -197160
+      },
+      {
+        "name": "MultiVAC",
+        "tvlChange1d": 123
+      },
+      {
+        "name": "ICP",
+        "tvlChange1d": -4270721
+      },
+      {
+        "name": "Nova Network",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Ultron",
+        "tvlChange1d": -65079
+      },
+      {
+        "name": "Zkfair",
+        "tvlChange1d": -904
+      },
+      {
+        "name": "Kroma",
+        "tvlChange1d": 299
+      },
+      {
+        "name": "OXFUN",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "WEMIX3.0",
+        "tvlChange1d": -669941
+      },
+      {
+        "name": "Kintsugi",
+        "tvlChange1d": 1935
+      },
+      {
+        "name": "Chiliz",
+        "tvlChange1d": 230121
+      },
+      {
+        "name": "Dexit",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "PulseChain",
+        "tvlChange1d": 5728274
+      },
+      {
+        "name": "Omax",
+        "tvlChange1d": -3488
+      },
+      {
+        "name": "Flow",
+        "tvlChange1d": 341206
+      },
+      {
+        "name": "KUB",
+        "tvlChange1d": 988
+      },
+      {
+        "name": "Ancient8",
+        "tvlChange1d": -3950
+      },
+      {
+        "name": "Heiko",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Parallel",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "LightLink",
+        "tvlChange1d": 8562
+      },
+      {
+        "name": "ShimmerEVM",
+        "tvlChange1d": -5780
+      },
+      {
+        "name": "Loop",
+        "tvlChange1d": -1822
+      },
+      {
+        "name": "Carbon",
+        "tvlChange1d": 30375
+      },
+      {
+        "name": "Starcoin",
+        "tvlChange1d": -911
+      },
+      {
+        "name": "Bifrost",
+        "tvlChange1d": 127150
+      },
+      {
+        "name": "Tombchain",
+        "tvlChange1d": 27843
+      },
+      {
+        "name": "Crescent",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Vision",
+        "tvlChange1d": -2447
+      },
+      {
+        "name": "Interlay",
+        "tvlChange1d": 4361
+      },
+      {
+        "name": "Pego",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "EthereumPoW",
+        "tvlChange1d": 938
+      },
+      {
+        "name": "FunctionX",
+        "tvlChange1d": 4104
+      },
+      {
+        "name": "Saga",
+        "tvlChange1d": 271815
+      },
+      {
+        "name": "Lisk",
+        "tvlChange1d": 61979
+      },
+      {
+        "name": "World Chain",
+        "tvlChange1d": -32542
+      },
+      {
+        "name": "Movement",
+        "tvlChange1d": 738874
+      },
+      {
+        "name": "Kekchain",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Astar zkEVM",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Immutable zkEVM",
+        "tvlChange1d": 616386
+      },
+      {
+        "name": "MUUCHAIN",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Hyperliquid L1",
+        "tvlChange1d": 41615063
+      },
+      {
+        "name": "EDU Chain",
+        "tvlChange1d": 444
+      },
+      {
+        "name": "Superposition",
+        "tvlChange1d": -195
+      },
+      {
+        "name": "Reya Network",
+        "tvlChange1d": -157213
+      },
+      {
+        "name": "Rari",
+        "tvlChange1d": 184
+      },
+      {
+        "name": "DuckChain",
+        "tvlChange1d": 50617
+      },
+      {
+        "name": "Xai",
+        "tvlChange1d": 9947
+      },
+      {
+        "name": "Sanko",
+        "tvlChange1d": -860
+      },
+      {
+        "name": "Starknet",
+        "tvlChange1d": -14299211
+      },
+      {
+        "name": "MAP Protocol",
+        "tvlChange1d": 194700
+      },
+      {
+        "name": "DSC",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "ALV",
+        "tvlChange1d": -7567
+      },
+      {
+        "name": "Comdex",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Tlchain",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Zeniq",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Bitindi",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Stargaze",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Libre",
+        "tvlChange1d": 11316
+      },
+      {
+        "name": "UX",
+        "tvlChange1d": 22208
+      },
+      {
+        "name": "Optimism",
+        "tvlChange1d": -4513661
+      },
+      {
+        "name": "Oraichain",
+        "tvlChange1d": -43857
+      },
+      {
+        "name": "inEVM",
+        "tvlChange1d": 2
+      },
+      {
+        "name": "Dexalot",
+        "tvlChange1d": 32388
+      },
+      {
+        "name": "Darwinia",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Crab",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Rangers",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Lung",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Bone",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Sophon",
+        "tvlChange1d": 188652
+      },
+      {
+        "name": "Persistence One",
+        "tvlChange1d": 24629
+      },
+      {
+        "name": "WINR",
+        "tvlChange1d": -40749
+      },
+      {
+        "name": "IOTA EVM",
+        "tvlChange1d": 486697
+      },
+      {
+        "name": "Polynomial",
+        "tvlChange1d": -158939
+      },
+      {
+        "name": "EOS EVM",
+        "tvlChange1d": -2
+      },
+      {
+        "name": "Oasys",
+        "tvlChange1d": 14772
+      },
+      {
+        "name": "ENULS",
+        "tvlChange1d": 77
+      },
+      {
+        "name": "Grove",
+        "tvlChange1d": -375
+      },
+      {
+        "name": "Story",
+        "tvlChange1d": -184455
+      },
+      {
+        "name": "Plume",
+        "tvlChange1d": 1
+      },
+      {
+        "name": "XPLA",
+        "tvlChange1d": -6179
+      },
+      {
+        "name": "Onus",
+        "tvlChange1d": -159933
+      },
+      {
+        "name": "Swellchain",
+        "tvlChange1d": -358297
+      },
+      {
+        "name": "Concordium",
+        "tvlChange1d": 5
+      },
+      {
+        "name": "Migaloo",
+        "tvlChange1d": 2123
+      },
+      {
+        "name": "Chihuahua",
+        "tvlChange1d": 7165
+      },
+      {
+        "name": "Tenet",
+        "tvlChange1d": -42
+      },
+      {
+        "name": "Bitlayer",
+        "tvlChange1d": 10180182
+      },
+      {
+        "name": "Mint",
+        "tvlChange1d": 39475
+      },
+      {
+        "name": "Taraxa",
+        "tvlChange1d": -9400
+      },
+      {
+        "name": "Artela",
+        "tvlChange1d": -825
+      },
+      {
+        "name": "Alephium",
+        "tvlChange1d": -36757
+      },
+      {
+        "name": "Aura Network",
+        "tvlChange1d": 260
+      },
+      {
+        "name": "Nibiru",
+        "tvlChange1d": -671
+      },
+      {
+        "name": "Hydration",
+        "tvlChange1d": 145654
+      },
+      {
+        "name": "MVC",
+        "tvlChange1d": -458
+      },
+      {
+        "name": "Perennial",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Beam",
+        "tvlChange1d": 64325
+      },
+      {
+        "name": "NOS",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "RENEC",
+        "tvlChange1d": 431
+      },
+      {
+        "name": "Nolus",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "ETHF",
+        "tvlChange1d": 461
+      },
+      {
+        "name": "MEER",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Elysium",
+        "tvlChange1d": 4184
+      },
+      {
+        "name": "Mayachain",
+        "tvlChange1d": -6737003
+      },
+      {
+        "name": "Dash",
+        "tvlChange1d": 428
+      },
+      {
+        "name": "Bostrom",
+        "tvlChange1d": 144
+      },
+      {
+        "name": "Degen",
+        "tvlChange1d": 16070
+      },
+      {
+        "name": "Chainflip",
+        "tvlChange1d": 1063430
+      },
+      {
+        "name": "FSC",
+        "tvlChange1d": 10041
+      },
+      {
+        "name": "AB",
+        "tvlChange1d": -28977
+      },
+      {
+        "name": "JBC",
+        "tvlChange1d": 177
+      },
+      {
+        "name": "BounceBit",
+        "tvlChange1d": 175182
+      },
+      {
+        "name": "AILayer",
+        "tvlChange1d": 840142
+      },
+      {
+        "name": "Cyber",
+        "tvlChange1d": 8070
+      },
+      {
+        "name": "Fluence",
+        "tvlChange1d": 19103
+      },
+      {
+        "name": "Swan",
+        "tvlChange1d": -1722
+      },
+      {
+        "name": "CMP",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "BEVM",
+        "tvlChange1d": 3515
+      },
+      {
+        "name": "AirDAO",
+        "tvlChange1d": -3289
+      },
+      {
+        "name": "dYdX",
+        "tvlChange1d": 748906
+      },
+      {
+        "name": "Bitnet",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Ham",
+        "tvlChange1d": 3
+      },
+      {
+        "name": "Areon Network",
+        "tvlChange1d": 279
+      },
+      {
+        "name": "Manta Atlantic",
+        "tvlChange1d": 168
+      },
+      {
+        "name": "Bitrock",
+        "tvlChange1d": 931
+      },
+      {
+        "name": "Naka",
+        "tvlChange1d": 440
+      },
+      {
+        "name": "DeFiVerse",
+        "tvlChange1d": 111436
+      },
+      {
+        "name": "Oasis Sapphire",
+        "tvlChange1d": 70698
+      },
+      {
+        "name": "K2",
+        "tvlChange1d": -220183
+      },
+      {
+        "name": "DeFiChain EVM",
+        "tvlChange1d": 1575
+      },
+      {
+        "name": "RSS3",
+        "tvlChange1d": 78236
+      },
+      {
+        "name": "Prom",
+        "tvlChange1d": 4887
+      },
+      {
+        "name": "SatoshiVM",
+        "tvlChange1d": 6898
+      },
+      {
+        "name": "Venom",
+        "tvlChange1d": -90598
+      },
+      {
+        "name": "Planq",
+        "tvlChange1d": 321
+      },
+      {
+        "name": "LaChain Network",
+        "tvlChange1d": 5230
+      },
+      {
+        "name": "Endurance",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Genesys",
+        "tvlChange1d": 11796
+      },
+      {
+        "name": "Polkadex",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "aelf",
+        "tvlChange1d": 54154
+      },
+      {
+        "name": "Lukso",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Joltify",
+        "tvlChange1d": 501
+      },
+      {
+        "name": "Massa",
+        "tvlChange1d": -34
+      },
+      {
+        "name": "Aeternity",
+        "tvlChange1d": 30
+      },
+      {
+        "name": "Saakuru",
+        "tvlChange1d": 221
+      },
+      {
+        "name": "XRPL",
+        "tvlChange1d": -81
+      },
+      {
+        "name": "Neo X Mainnet",
+        "tvlChange1d": -3689
+      },
+      {
+        "name": "Dymension",
+        "tvlChange1d": 78296
+      },
+      {
+        "name": "IDEX",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "Electroneum",
+        "tvlChange1d": -463
+      },
+      {
+        "name": "HeLa",
+        "tvlChange1d": -20
+      },
+      {
+        "name": "Matchain",
+        "tvlChange1d": 1745
+      },
+      {
+        "name": "Shape",
+        "tvlChange1d": 365
+      },
+      {
+        "name": "Fuel Ignition",
+        "tvlChange1d": -117278
+      },
+      {
+        "name": "Asset Chain",
+        "tvlChange1d": 9819
+      },
+      {
+        "name": "Shido",
+        "tvlChange1d": -3138
+      },
+      {
+        "name": "Redbelly",
+        "tvlChange1d": -15603
+      },
+      {
+        "name": "VinuChain",
+        "tvlChange1d": 146
+      },
+      {
+        "name": "QL1",
+        "tvlChange1d": 429015
+      },
+      {
+        "name": "Vana",
+        "tvlChange1d": 11383
+      },
+      {
+        "name": "Agoric",
+        "tvlChange1d": 76042
+      },
+      {
+        "name": "Elys",
+        "tvlChange1d": 168737
+      },
+      {
+        "name": "Odyssey",
+        "tvlChange1d": 27607
+      },
+      {
+        "name": "Kopi",
+        "tvlChange1d": 0
+      },
+      {
+        "name": "CrossFi",
+        "tvlChange1d": 29985
+      },
+      {
+        "name": "Waterfall",
+        "tvlChange1d": -1
+      },
+      {
+        "name": "Mantra",
+        "tvlChange1d": -18626
+      },
+      {
+        "name": "Verus",
+        "tvlChange1d": 1870818
+      },
+      {
+        "name": "Zero Network",
+        "tvlChange1d": -4661
+      },
+      {
+        "name": "Redstone",
+        "tvlChange1d": 45
+      },
+      {
+        "name": "Parex",
+        "tvlChange1d": 1971
+      },
+      {
+        "name": "Plume Mainnet",
+        "tvlChange1d": 77
+      },
+      {
+        "name": "Penumbra",
+        "tvlChange1d": 440
+      },
+      {
+        "name": "Stratis",
+        "tvlChange1d": -15367
+      },
+      {
+        "name": "Silicon zkEVM",
+        "tvlChange1d": 162
+      },
+      {
+        "name": "Form Network",
+        "tvlChange1d": 55
+      },
+      {
+        "name": "MTT Network",
+        "tvlChange1d": -1924
+      },
+      {
+        "name": "Qubic",
+        "tvlChange1d": 2657
+      },
+      {
+        "name": "AO",
+        "tvlChange1d": 2888
+      },
+      {
+        "name": "Supra",
+        "tvlChange1d": 155937
+      },
+      {
+        "name": "Moonchain",
+        "tvlChange1d": 115
+      }
+    ],
+    "news": [
+      "Canada to approve SOL ETFs with staking functions as SEC postpones staking function for Grayscale spot ETH ETF",
+      "Canada Set to Launch World\u2019s First Spot Solana ETFs on April 16",
+      "Saylor signals new Bitcoin buy after Strategy reports nearly $6 billion Q1 unrealized loss",
+      "OpenAI is building its own social network to rival Elon Musk\u2019s X",
+      "Solana defies activity drop, dominating 70% of blockchain revenue"
+    ]
   }
 ]

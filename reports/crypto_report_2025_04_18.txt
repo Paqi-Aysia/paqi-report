@@ -1,0 +1,73 @@
+Crypto Market Report - 2025-04-18
+
+The Maxis:
+Bitcoin (BTC): Current Price $84489 | 24-Hour Change: 0.68%
+Ethereum (ETH): Current Price $1588.96 | 24-Hour Change: 1.21%
+
+Top Movers (Last 24 Hours, Top 500 MC):
+Bittensor (tao): $264.23 | 24-Hour Change: 14.16%
+Flare (flr): $0.01661813 | 24-Hour Change: 14.04%
+Artificial Superintelligence Alliance (fet): $0.50457 | 24-Hour Change: 9.28%
+Immutable (imx): $0.435475 | 24-Hour Change: 7.79%
+Filecoin (fil): $2.48 | 24-Hour Change: 5.92%
+
+Aggregate Market Capitalizations:
+L1: $2,173,864,315,729.82
+L2: $12,211,650,273.41
+Gaming: $10,331,894,046.49
+DeFi: $83,235,063,223.59
+AI: $21,027,404,919.04
+RWA: $34,699,851,806.98
+Stablecoins: $236,781,982,853.11
+Solana Meme: $6,747,973,168.04
+AI Agent: $3,900,946,306.13
+DePIN: $16,167,862,501.09
+
+TVL Data (Top TVLs):
+AAVE V3, TVL: $17617899639.37
+Lido, TVL: $14769910303.83
+EigenLayer, TVL: $6985178376.10
+Sky Lending, TVL: $5550098464.41
+Ethena USDe, TVL: $4831878084.21
+ether.fi Stake, TVL: $3824831626.07
+Arbitrum Bridge, TVL: $3717154876.50
+JustLend, TVL: $3599420163.11
+Base Bridge, TVL: $3372990439.11
+Binance staked ETH, TVL: $3355257778.76
+Pendle, TVL: $2852004440.80
+Babylon, TVL: $2666732688.09
+Uniswap V3, TVL: $2533403381.21
+Morpho Blue, TVL: $2520386479.76
+BlackRock BUIDL, TVL: $2397694471.11
+Royco Protocol, TVL: $2391210197.44
+Spark Liquidity Layer, TVL: $2360222140.91
+Polygon Bridge & Staking, TVL: $2336993207.82
+Jito Liquid Staking, TVL: $2306899824.61
+Veda, TVL: $2165106839.33
+
+Inflow and Outflow:
+Top Chains by Inflow:
+Unichain: TVL Change 1D: $115,968,827.00
+BSC: TVL Change 1D: $91,335,294.00
+Solana: TVL Change 1D: $77,132,379.00
+BSquared: TVL Change 1D: $48,429,151.00
+Hyperliquid L1: TVL Change 1D: $41,615,063.00
+
+Top Chains by Outflow:
+Ethereum: TVL Change 1D: $-242,938,066.00
+CORE: TVL Change 1D: $-52,717,331.00
+Merlin: TVL Change 1D: $-18,151,622.00
+Sonic: TVL Change 1D: $-17,444,465.00
+Sei: TVL Change 1D: $-16,066,608.00
+
+Hot News:
+Solana defies activity drop, dominating 70% of blockchain revenue - https://cryptopanic.com/news/21151610/Solana-defies-activity-drop-dominating-70-of-blockchain-revenue?mtm_campaign=API-OFA
+Ethereum (ETH) ETFs Show Zero Performance - https://cryptopanic.com/news/21150506/Ethereum-ETH-ETFs-Show-Zero-Performance?mtm_campaign=API-OFA
+Experimental Token On Base Crashes By 95% - https://cryptopanic.com/news/21131154/Experimental-Token-On-Base-Crashes-By-95?mtm_campaign=API-OFA
+Secret Service, Canadian Officials Disrupt $4.3M Ethereum “Approval Phishing” Scam - https://cryptopanic.com/news/21126365/Secret-Service-Canadian-Officials-Disrupt-43M-Ethereum-Approval-Phishing-Scam?mtm_campaign=API-OFA
+North Carolina: proposal advances to invest 10% of public funds in Bitcoin - https://cryptopanic.com/news/21121304/North-Carolina-proposal-advances-to-invest-10-of-public-funds-in-Bitcoin?mtm_campaign=API-OFA
+Ethereum Is What Bitcoin Was Meant to Be - https://cryptopanic.com/news/21110810/Ethereum-Is-What-Bitcoin-Was-Meant-to-Be?mtm_campaign=API-OFA
+Vitalik Buterin: Why Privacy Must Be a Top Priority in Blockchain Development - https://cryptopanic.com/news/21110655/Vitalik-Buterin-Why-Privacy-Must-Be-a-Top-Priority-in-Blockchain-Development?mtm_campaign=API-OFA
+Trump goes after Harvard’s tax-exempt status as standoff escalates - https://cryptopanic.com/news/21091813/Trump-goes-after-Harvards-tax-exempt-status-as-standoff-escalates?mtm_campaign=API-OFA
+Trump Considers Ban on Congressional Insider Trading - https://cryptopanic.com/news/21091719/Trump-Considers-Ban-on-Congressional-Insider-Trading?mtm_campaign=API-OFA
+OpenAI is building its own social network to rival Elon Musk’s X - https://cryptopanic.com/news/21091172/OpenAI-is-building-its-own-social-network-to-rival-Elon-Musks-X?mtm_campaign=API-OFA

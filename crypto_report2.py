@@ -4,11 +4,11 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 import json
-import time
+# import time
 import logging
 from datetime import datetime
 from flask import Flask, jsonify, render_template
-from apscheduler.schedulers.blocking import BlockingScheduler
+# from apscheduler.schedulers.blocking import BlockingScheduler
 from zoneinfo import ZoneInfo
 
 from utils import fetch_json, ensure_folder
@@ -199,7 +199,8 @@ def save_structured_data(new_data, path="data/accumulated.json"):
 
     with open(path, "w") as f:
         json.dump(data, f, indent=2)
-
+''' 
+Commented out since using cron job to generate the daily report.
 # --- SCHEDULER ---
 def main():
     report, structured_data = generate_report()
@@ -214,7 +215,7 @@ def schedule_daily_report():
         scheduler.start()
     except (KeyboardInterrupt, SystemExit):
         logging.warning("Scheduler stopped.")
-
+''' 
 # --- FLASK APP ---
 app = Flask(__name__)
 
