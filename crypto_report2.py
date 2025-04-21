@@ -29,9 +29,19 @@ def get_market_data():
     }
     return fetch_json(url, params) or []
 
+import logging
+import time
+
 def get_market_caps():
     url = "https://api.coingecko.com/api/v3/coins/categories"
-    data = fetch_json(url) or []
+    data = fetch_json(url)
+
+    if not data:
+        logging.warning("CoinGecko categories request failed — returning empty caps")
+        return {key: 0 for key in [
+            "L1", "L2", "Gaming", "DeFi", "AI", "RWA", "Stablecoins",
+            "Solana Meme", "AI Agent", "DePIN"
+        ]}
 
     categories = {
         "L1": "layer-1",
