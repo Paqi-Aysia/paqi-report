@@ -279,13 +279,29 @@ def generate_daily_report():
         sys.stdout.flush()  # <---- force logs to flush
         return jsonify({"status": "error", "message": str(e)}), 500
     
+from datetime import date
+
+def should_run_backfill(path="data/accumulated.json"):
+    if not os.path.exists(path) or os.stat(path).st_size == 0:
+        return True
+
+    with open(path, "r") as f:
+        try:
+            data = json.load(f)
+        except Exception:
+            return True
+
+    today = date.today().strftime("%Y-%m-%d")
+    return all(entry["date"] != today for entry in data)
+
 if __name__ == "__main__":
-    # Only run backfill if the accumulated data doesn't exist or is empty
     try:
-        if not os.path.exists("data/accumulated.json") or os.stat("data/accumulated.json").st_size == 0:
+        if should_run_backfill():
             print("📦 Running one-time backfill...")
             run_backfill()
             print("✅ Backfill completed.")
+        else:
+            print("📁 Today's data already exists — skipping backfill.")
     except Exception as e:
         import traceback
         print("❌ Backfill failed:")
