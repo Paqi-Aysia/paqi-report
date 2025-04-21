@@ -310,5 +310,6 @@ if __name__ == "__main__":
         import sys
         sys.stdout.flush()
 
-    main()
+    #Removed main line since scheduler above was commented out in favor of cron job
+    #main() 
     app.run(host="0.0.0.0", port=5001, debug=True)
