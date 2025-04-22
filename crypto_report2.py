@@ -78,15 +78,32 @@ def get_historical_tvl(chain):
     url = f"https://api.llama.fi/v2/historicalChainTvl/{chain}"
     return fetch_json(url) or []
 
-def get_chain_inflow_outflow():
+def get_chain_inflow_outflow(max_fallback_calls=5, delay=1.5):
+    import logging
     url = "https://api.llama.fi/v2/chains"
     chains = fetch_json(url) or []
+    
+    fallback_count = 0
     for chain in chains:
         if not chain.get("tvlChange1d"):
-            data = get_historical_tvl(chain["name"].lower())
-            if len(data) >= 2:
-                chain["tvlChange1d"] = data[-1]["tvl"] - data[-2]["tvl"]
-    return chains
+            if fallback_count >= max_fallback_calls:
+                logging.warning(f"⛔ Max fallback TVL calls reached ({max_fallback_calls}). Skipping the rest.")
+                break
+
+            chain_name = chain.get("name", "unknown").lower()
+            logging.info(f"📊 Missing TVL change for: {chain_name}. Fetching historical TVL...")
+            time.sleep(delay)
+
+            try:
+                data = get_historical_tvl(chain_name)
+                if len(data) >= 2:
+                    chain["tvlChange1d"] = data[-1]["tvl"] - data[-2]["tvl"]
+                    fallback_count += 1
+            except Exception as e:
+                logging.error(f"❌ Failed to fetch historical TVL for {chain_name}: {e}")
+                continue
+
+            return chains
 
 def get_crypto_news():
     url = "https://cryptopanic.com/api/v1/posts/"
