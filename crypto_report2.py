@@ -90,31 +90,23 @@ def get_historical_tvl(chain):
     url = f"https://api.llama.fi/v2/historicalChainTvl/{chain}"
     return fetch_json(url) or []
 
-def get_chain_inflow_outflow(max_fallback_calls=5, delay=1.0):
+def get_chain_inflow_outflow():
     url = "https://api.llama.fi/v2/chains"
     chains = fetch_json(url) or []
 
-    fallback_count = 0
+    # Load fallback cache
+    fallback_path = "data/tvl_fallbacks.json"
+    fallback_data = {}
+    if os.path.exists(fallback_path):
+        with open(fallback_path, "r") as f:
+            fallback_data = json.load(f)
+
     for chain in chains:
-        # Treat missing or zero TVL change as invalid
+        name = chain.get("name")
         if not chain.get("tvlChange1d") or chain["tvlChange1d"] == 0:
-            if fallback_count >= max_fallback_calls:
-                logging.warning(f"🛑 Max fallback TVL calls reached ({max_fallback_calls}). Skipping the rest.")
-                break
-
-            chain_name = chain.get("name", "unknown").lower()
-            logging.info(f"📊 Missing or zero TVL change for: {chain_name}. Fetching historical TVL...")
-            time.sleep(delay)
-
-            try:
-                data = get_historical_tvl(chain_name)
-                if len(data) >= 2:
-                    chain["tvlChange1d"] = data[-1]["tvl"] - data[-2]["tvl"]
-                    fallback_count += 1
-            except Exception as e:
-                logging.error(f"❌ Failed to fetch historical TVL for {chain_name}: {e}")
-                continue
-
+            fallback_value = fallback_data.get(name)
+            if fallback_value:
+                chain["tvlChange1d"] = fallback_value
     return chains
 
 def get_crypto_news():
