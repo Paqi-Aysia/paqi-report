@@ -137,13 +137,13 @@ def get_crypto_news():
 # --- REPORT GENERATION ---
 def generate_report():
     market_data = get_market_data()
-    time.sleep(1)  # ⏱️ Add delay between CoinGecko calls
+    time.sleep(3)  # ⏱️ Add delay between CoinGecko calls
 
     market_caps = get_market_caps()
-    time.sleep(1)  # ⏱️ Optional: add more delay between APIs
+    time.sleep(3)  # ⏱️ Optional: add more delay between APIs
 
     defillama_data = get_defillama_data()
-    time.sleep(0.5)
+    time.sleep(3)
 
     crypto_news = get_crypto_news()
     time.sleep(0.5)
