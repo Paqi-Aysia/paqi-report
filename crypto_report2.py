@@ -90,16 +90,13 @@ def get_historical_tvl(chain):
     url = f"https://api.llama.fi/v2/historicalChainTvl/{chain}"
     return fetch_json(url) or []
 
-from datetime import datetime
-
-def parse_date(d): return datetime.strptime(d, "%Y-%m-%d")
-
 def get_chain_inflow_outflow(max_fallback_calls=15, delay=1.5):
     url = "https://api.llama.fi/v2/chains"
     chains = fetch_json(url) or []
 
     fallback_count = 0
     for chain in chains:
+        # Treat missing or zero TVL change as invalid
         if not chain.get("tvlChange1d") or chain["tvlChange1d"] == 0:
             if fallback_count >= max_fallback_calls:
                 logging.warning(f"🛑 Max fallback TVL calls reached ({max_fallback_calls}). Skipping the rest.")
@@ -112,18 +109,8 @@ def get_chain_inflow_outflow(max_fallback_calls=15, delay=1.5):
             try:
                 data = get_historical_tvl(chain_name)
                 if len(data) >= 2:
-                    last = data[-1]
-                    prev = data[-2]
-                    d1 = parse_date(last["date"])
-                    d2 = parse_date(prev["date"])
-
-                    if (d1 - d2).days == 1:
-                        delta = last["tvl"] - prev["tvl"]
-                        chain["tvlChange1d"] = delta
-                        fallback_count += 1
-                        logging.info(f"✅ {chain_name}: fallback TVL change = {delta:,.0f} USD from {d2.date()} → {d1.date()}")
-                    else:
-                        logging.warning(f"⚠️ Skipped {chain_name}: date gap is {(d1 - d2).days} days ({d2.date()} → {d1.date()})")
+                    chain["tvlChange1d"] = data[-1]["tvl"] - data[-2]["tvl"]
+                    fallback_count += 1
             except Exception as e:
                 logging.error(f"❌ Failed to fetch historical TVL for {chain_name}: {e}")
                 continue
