@@ -90,7 +90,7 @@ def get_historical_tvl(chain):
     url = f"https://api.llama.fi/v2/historicalChainTvl/{chain}"
     return fetch_json(url) or []
 
-def get_chain_inflow_outflow(max_fallback_calls=5, delay=1.5):
+def get_chain_inflow_outflow(max_fallback_calls=5, delay=1.0):
     url = "https://api.llama.fi/v2/chains"
     chains = fetch_json(url) or []
 
