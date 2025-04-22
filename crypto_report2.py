@@ -96,13 +96,14 @@ def get_chain_inflow_outflow(max_fallback_calls=5, delay=1.5):
 
     fallback_count = 0
     for chain in chains:
-        if not chain.get("tvlChange1d"):
+        # Treat missing or zero TVL change as invalid
+        if not chain.get("tvlChange1d") or chain["tvlChange1d"] == 0:
             if fallback_count >= max_fallback_calls:
-                logging.warning(f"⛔ Max fallback TVL calls reached ({max_fallback_calls}). Skipping the rest.")
+                logging.warning(f"🛑 Max fallback TVL calls reached ({max_fallback_calls}). Skipping the rest.")
                 break
 
             chain_name = chain.get("name", "unknown").lower()
-            logging.info(f"📊 Missing TVL change for: {chain_name}. Fetching historical TVL...")
+            logging.info(f"📊 Missing or zero TVL change for: {chain_name}. Fetching historical TVL...")
             time.sleep(delay)
 
             try:
@@ -114,7 +115,7 @@ def get_chain_inflow_outflow(max_fallback_calls=5, delay=1.5):
                 logging.error(f"❌ Failed to fetch historical TVL for {chain_name}: {e}")
                 continue
 
-    return chains 
+    return chains
 
 def get_crypto_news():
     url = "https://cryptopanic.com/api/v1/posts/"
