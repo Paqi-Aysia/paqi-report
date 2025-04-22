@@ -105,8 +105,10 @@ def get_chain_inflow_outflow():
         name = chain.get("name")
         if not chain.get("tvlChange1d") or chain["tvlChange1d"] == 0:
             fallback_value = fallback_data.get(name)
-            if fallback_value:
+            if fallback_value is not None:
                 chain["tvlChange1d"] = fallback_value
+                logging.info(f"🪄 Using fallback TVL for {name}: {fallback_value:,.0f}")
+
     return chains
 
 def get_crypto_news():
@@ -322,6 +324,20 @@ def generate_daily_report():
         import sys
         sys.stdout.flush()  # <---- force logs to flush
         return jsonify({"status": "error", "message": str(e)}), 500
+    
+@app.route("/tvl-fallbacks")
+def view_tvl_fallbacks():
+    import os
+    import json
+    from flask import jsonify
+
+    fallback_path = "data/tvl_fallbacks.json"
+    if os.path.exists(fallback_path):
+        with open(fallback_path, "r") as f:
+            data = json.load(f)
+        return jsonify({"status": "success", "data": data})
+    else:
+        return jsonify({"status": "error", "message": "Fallback cache not found."})
     
 from datetime import date
 
