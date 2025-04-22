@@ -215,7 +215,11 @@ def generate_report():
             {"name": p["name"], "tvl": p["tvl"]} for p in defillama_data
         ],
         "chain_flows": [
-            {"name": c["name"], "tvlChange1d": c.get("tvlChange1d", 0)} for c in chain_data
+            {
+                "name": c["name"],
+                "tvlChange1d": c.get("tvlChange1d", 0)
+            }
+            for c in inflow + outflow
         ],
         "news": list({n["title"] for n in crypto_news})[:5]
     }
