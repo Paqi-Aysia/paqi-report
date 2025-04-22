@@ -34,8 +34,19 @@ import time
 
 def get_market_caps():
     url = "https://api.coingecko.com/api/v3/coins/categories"
-    data = fetch_json(url)
+    retries = 3
+    delay = 2
+    data = None
 
+    # 🔁 Try multiple times if CoinGecko fails due to 429
+    for attempt in range(retries):
+        data = fetch_json(url)
+        if data:
+            break  # ✅ success!
+        logging.warning(f"CoinGecko call failed (attempt {attempt + 1}) — retrying in {delay}s...")
+        time.sleep(delay)
+
+    # ❌ Still failed after retries
     if not data:
         logging.warning("CoinGecko categories request failed — returning empty caps")
         return {key: 0 for key in [
@@ -43,6 +54,7 @@ def get_market_caps():
             "Solana Meme", "AI Agent", "DePIN"
         ]}
 
+    # ✅ Proceed exactly as before
     categories = {
         "L1": "layer-1",
         "L2": "layer-2",
@@ -79,10 +91,9 @@ def get_historical_tvl(chain):
     return fetch_json(url) or []
 
 def get_chain_inflow_outflow(max_fallback_calls=5, delay=1.5):
-    import logging
     url = "https://api.llama.fi/v2/chains"
     chains = fetch_json(url) or []
-    
+
     fallback_count = 0
     for chain in chains:
         if not chain.get("tvlChange1d"):
@@ -103,7 +114,7 @@ def get_chain_inflow_outflow(max_fallback_calls=5, delay=1.5):
                 logging.error(f"❌ Failed to fetch historical TVL for {chain_name}: {e}")
                 continue
 
-            return chains
+    return chains 
 
 def get_crypto_news():
     url = "https://cryptopanic.com/api/v1/posts/"
