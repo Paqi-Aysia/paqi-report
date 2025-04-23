@@ -150,9 +150,11 @@ def get_crypto_news():
 def generate_report():
     time.sleep(1)
     market_data = get_market_data()
+    time.sleep(1)
 
     time.sleep(1)
     market_caps = get_market_caps()
+    time.sleep(1)
 
     defillama_data = get_defillama_data()
 
