@@ -35,7 +35,7 @@ import time
 def get_market_caps():
     url = "https://api.coingecko.com/api/v3/coins/categories"
     retries = 3
-    delay = 2
+    delay = 5
     data = None
 
     # 🔁 Try multiple times if CoinGecko fails due to 429
