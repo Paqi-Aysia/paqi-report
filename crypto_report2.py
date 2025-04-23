@@ -34,19 +34,8 @@ import time
 
 def get_market_caps():
     url = "https://api.coingecko.com/api/v3/coins/categories"
-    retries = 2
-    delay = 2
-    data = None
+    data = fetch_json(url)
 
-    # 🔁 Try multiple times if CoinGecko fails due to 429
-    for attempt in range(retries):
-        data = fetch_json(url)
-        if data:
-            break  # ✅ success!
-        logging.warning(f"CoinGecko call failed (attempt {attempt + 1}) — retrying in {delay}s...")
-        time.sleep(delay)
-
-    # ❌ Still failed after retries
     if not data:
         logging.warning("CoinGecko categories request failed — returning empty caps")
         return {key: 0 for key in [
@@ -54,7 +43,6 @@ def get_market_caps():
             "Solana Meme", "AI Agent", "DePIN"
         ]}
 
-    # ✅ Proceed exactly as before
     categories = {
         "L1": "layer-1",
         "L2": "layer-2",
