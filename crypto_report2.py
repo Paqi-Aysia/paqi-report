@@ -91,7 +91,7 @@ def get_chain_inflow_outflow_v2():
             yesterday = hist[-2]["tvl"]
             delta = today - yesterday
             results.append({"name": name, "tvlChange1d": delta})
-        time.sleep(0.2)
+        time.sleep(0.1)
 
     inflows = sorted([c for c in results if c["tvlChange1d"] > 0], key=lambda x: x["tvlChange1d"], reverse=True)[:5]
     outflows = sorted([c for c in results if c["tvlChange1d"] < 0], key=lambda x: x["tvlChange1d"])[:5]
@@ -119,10 +119,10 @@ def get_crypto_news():
 # --- REPORT GENERATION ---
 def generate_report():
     market_data = get_market_data()
-    time.sleep(1.5)
+    time.sleep(1)
 
     market_caps = get_market_caps()
-    time.sleep(1.5)
+    time.sleep(1)
 
     defillama_data = get_defillama_data()
 
