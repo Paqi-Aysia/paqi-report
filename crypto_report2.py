@@ -19,7 +19,7 @@ logging.basicConfig(level=logging.INFO)
 # --- API FETCHING FUNCTIONS ---
 
 def get_market_data():
-    time.sleep(5)  # Delay BEFORE calling the API
+    time.sleep(1)  # Delay BEFORE calling the API
     url = "https://api.coingecko.com/api/v3/coins/markets"
     params = {
         "vs_currency": "usd",
@@ -36,7 +36,7 @@ import time
 def get_market_caps():
     url = "https://api.coingecko.com/api/v3/coins/categories"
     retries = 3
-    delay = 5
+    delay = 1
     data = None
 
     # 🔁 Try multiple times if CoinGecko fails due to 429
