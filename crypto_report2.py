@@ -122,6 +122,7 @@ def generate_report():
     time.sleep(1.5)
 
     market_caps = get_market_caps()
+    time.sleep(1.5)
 
     defillama_data = get_defillama_data()
 
