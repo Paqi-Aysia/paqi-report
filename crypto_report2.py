@@ -95,7 +95,7 @@ def get_chain_inflow_outflow():
     chains = fetch_json(url) or []
 
     # Load fallback cache
-    fallback_path = "data/tvl_fallbacks.json"
+    fallback_path = "mnt/data/tvl_fallbacks.json"
     fallback_data = {}
     if os.path.exists(fallback_path):
         with open(fallback_path, "r") as f:
