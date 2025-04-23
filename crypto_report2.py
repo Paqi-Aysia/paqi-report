@@ -19,6 +19,7 @@ logging.basicConfig(level=logging.INFO)
 # --- API FETCHING FUNCTIONS ---
 
 def get_market_data():
+    time.sleep(2)  # Delay BEFORE calling the API
     url = "https://api.coingecko.com/api/v3/coins/markets"
     params = {
         "vs_currency": "usd",
