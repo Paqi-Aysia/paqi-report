@@ -91,26 +91,25 @@ def get_historical_tvl(chain):
     url = f"https://api.llama.fi/v2/historicalChainTvl/{chain}"
     return fetch_json(url) or []
 
-def get_chain_inflow_outflow():
+def get_chain_inflow_outflow_v2():
     url = "https://api.llama.fi/v2/chains"
     chains = fetch_json(url) or []
-
-    # Load fallback cache
-    fallback_path = "mnt/data/tvl_fallbacks.json"
-    fallback_data = {}
-    if os.path.exists(fallback_path):
-        with open(fallback_path, "r") as f:
-            fallback_data = json.load(f)
+    results = []
 
     for chain in chains:
         name = chain.get("name")
-        if not chain.get("tvlChange1d") or chain["tvlChange1d"] == 0:
-            fallback_value = fallback_data.get(name)
-            if fallback_value is not None:
-                chain["tvlChange1d"] = fallback_value
-                logging.info(f"🪄 Using fallback TVL for {name}: {fallback_value:,.0f}")
+        hist = get_historical_tvl(name.lower())
+        if len(hist) >= 2:
+            today = hist[-1]["tvl"]
+            yesterday = hist[-2]["tvl"]
+            delta = today - yesterday
+            results.append({"name": name, "tvlChange1d": delta})
+        time.sleep(0.5)
 
-    return chains
+    inflows = sorted([c for c in results if c["tvlChange1d"] > 0], key=lambda x: x["tvlChange1d"], reverse=True)[:5]
+    outflows = sorted([c for c in results if c["tvlChange1d"] < 0], key=lambda x: x["tvlChange1d"])[:5]
+
+    return inflows, outflows
 
 def get_crypto_news():
     url = "https://cryptopanic.com/api/v1/posts/"
@@ -144,7 +143,7 @@ def generate_report():
     crypto_news = get_crypto_news()
     time.sleep(0.5)
 
-    chain_data = get_chain_inflow_outflow()
+    inflow, outflow = get_chain_inflow_outflow_v2()
 
     now = datetime.now().strftime('%Y-%m-%d')
     report = f"Crypto Market Report - {now}\n\n"
@@ -169,9 +168,8 @@ def generate_report():
         report += f"{p['name']}, TVL: ${p['tvl']:.2f}\n"
 
     report += "\nInflow and Outflow:\n"
-    if chain_data:
-        inflow = sorted(chain_data, key=lambda x: x.get("tvlChange1d", 0), reverse=True)[:5]
-        outflow = sorted(chain_data, key=lambda x: x.get("tvlChange1d", 0))[:5]
+    # Already sorted in v2, no need to re-sort
+    if inflow or outflow:
 
         report += "Top Chains by Inflow:\n"
         for chain in inflow:
