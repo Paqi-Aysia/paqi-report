@@ -78,33 +78,47 @@ def get_historical_tvl(chain):
     url = f"https://api.llama.fi/v2/historicalChainTvl/{chain}"
     return fetch_json(url) or []
 
+from datetime import datetime, timedelta
+
 def get_chain_inflow_outflow_v2():
     url = "https://api.llama.fi/v2/chains"
     chains = fetch_json(url) or []
     results = []
 
+    today = datetime.utcnow().date()
+    yesterday = today - timedelta(days=1)
+
     for chain in chains:
         name = chain.get("name")
         hist = get_historical_tvl(name)
-
         logging.info(f"🔁 Processing {name}, History length: {len(hist)}")
 
-        if len(hist) >= 2:
-            latest_two = hist[-2:]
-            tvl_yesterday = latest_two[0].get("tvl")
-            tvl_today = latest_two[1].get("tvl")
+        tvl_today = None
+        tvl_yesterday = None
+
+        for entry in reversed(hist):  # reversed to find recent entries faster
+            try:
+                entry_date = datetime.strptime(entry["date"], "%Y-%m-%d").date()
+            except Exception as e:
+                logging.warning(f"⚠️ Could not parse date for {name}: {entry}")
+                continue
+
+            if entry_date == today and tvl_today is None:
+                tvl_today = entry.get("tvl")
+            elif entry_date == yesterday and tvl_yesterday is None:
+                tvl_yesterday = entry.get("tvl")
 
             if tvl_today is not None and tvl_yesterday is not None:
-                delta = tvl_today - tvl_yesterday
-                results.append({"name": name, "tvlChange1d": delta})
-            else:
-                logging.warning(f"⚠️ Missing TVL for {name}: {[h.get('tvl') for h in latest_two]}")
+                break
+
+        if tvl_today is not None and tvl_yesterday is not None:
+            delta = tvl_today - tvl_yesterday
+            results.append({"name": name, "tvlChange1d": delta})
         else:
-            logging.warning(f"⚠️ Not enough TVL data for {name}")
-        
+            logging.warning(f"⚠️ {name} missing data: today={tvl_today}, yesterday={tvl_yesterday}")
+
         time.sleep(0.1)
 
-    # 🔍 Debug output: print all deltas to understand why outflows might be empty
     logging.info("🔍 All TVL Deltas:")
     for c in results:
         logging.info(f"{c['name']}: {c['tvlChange1d']}")
