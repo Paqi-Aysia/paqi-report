@@ -94,9 +94,9 @@ def get_chain_inflow_outflow_v2():
         time.sleep(0.1)
 
     # 🔍 Debug output: print all deltas to understand why outflows might be empty
-    print("🔍 All TVL Deltas:")
+    logging.info("🔍 All TVL Deltas:")
     for c in results:
-        print(f"{c['name']}: {c['tvlChange1d']}")
+        logging.info(f"{c['name']}: {c['tvlChange1d']}")
 
     inflows = sorted([c for c in results if c["tvlChange1d"] > 0], key=lambda x: x["tvlChange1d"], reverse=True)[:5]
     outflows = sorted([c for c in results if c["tvlChange1d"] < 0], key=lambda x: x["tvlChange1d"])[:5]
