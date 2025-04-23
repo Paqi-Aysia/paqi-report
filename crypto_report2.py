@@ -96,17 +96,17 @@ def get_chain_inflow_outflow_v2():
         tvl_today = None
         tvl_yesterday = None
 
-        for entry in reversed(hist):  # reversed to find recent entries faster
+        for entry in reversed(hist):
             try:
-                entry_date = datetime.strptime(entry["date"], "%Y-%m-%d").date()
-            except Exception as e:
+                entry_date = datetime.utcfromtimestamp(entry["date"]).date()  # 🔥 Fix is here
+            except Exception:
                 logging.warning(f"⚠️ Could not parse date for {name}: {entry}")
                 continue
 
             if entry_date == today and tvl_today is None:
-                tvl_today = entry.get("tvl")
+                tvl_today = entry["tvl"]
             elif entry_date == yesterday and tvl_yesterday is None:
-                tvl_yesterday = entry.get("tvl")
+                tvl_yesterday = entry["tvl"]
 
             if tvl_today is not None and tvl_yesterday is not None:
                 break
