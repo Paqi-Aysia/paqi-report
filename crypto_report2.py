@@ -119,6 +119,7 @@ def get_crypto_news():
 # --- REPORT GENERATION ---
 def generate_report():
     market_data = get_market_data()
+    time.sleep(1.5)
 
     market_caps = get_market_caps()
 
