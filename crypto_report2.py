@@ -19,7 +19,7 @@ logging.basicConfig(level=logging.INFO)
 # --- API FETCHING FUNCTIONS ---
 
 def get_market_data():
-    time.sleep(1)  # Delay BEFORE calling the API
+    time.sleep(2)  # Delay BEFORE calling the API
     url = "https://api.coingecko.com/api/v3/coins/markets"
     params = {
         "vs_currency": "usd",
@@ -36,7 +36,7 @@ import time
 def get_market_caps():
     url = "https://api.coingecko.com/api/v3/coins/categories"
     retries = 2
-    delay = 1
+    delay = 5
     data = None
 
     # 🔁 Try multiple times if CoinGecko fails due to 429
@@ -132,10 +132,10 @@ def get_crypto_news():
 # --- REPORT GENERATION ---
 def generate_report():
     market_data = get_market_data()
-    time.sleep(1)  # ⏱️ Add delay between CoinGecko calls
+    time.sleep(2)  # ⏱️ Add delay between CoinGecko calls
 
     market_caps = get_market_caps()
-    time.sleep(1)  # ⏱️ Optional: add more delay between APIs
+    time.sleep(2)  # ⏱️ Optional: add more delay between APIs
 
     defillama_data = get_defillama_data()
     time.sleep(2)
