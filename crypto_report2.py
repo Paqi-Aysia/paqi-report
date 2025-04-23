@@ -85,12 +85,23 @@ def get_chain_inflow_outflow_v2():
 
     for chain in chains:
         name = chain.get("name")
-        hist = get_historical_tvl(name.lower())
+        hist = get_historical_tvl(name)
+
+        logging.info(f"🔁 Processing {name}, History length: {len(hist)}")
+
         if len(hist) >= 2:
-            today = hist[-1]["tvl"]
-            yesterday = hist[-2]["tvl"]
-            delta = today - yesterday
-            results.append({"name": name, "tvlChange1d": delta})
+            latest_two = hist[-2:]
+            tvl_yesterday = latest_two[0].get("tvl")
+            tvl_today = latest_two[1].get("tvl")
+
+            if tvl_today is not None and tvl_yesterday is not None:
+                delta = tvl_today - tvl_yesterday
+                results.append({"name": name, "tvlChange1d": delta})
+            else:
+                logging.warning(f"⚠️ Missing TVL for {name}: {[h.get('tvl') for h in latest_two]}")
+        else:
+            logging.warning(f"⚠️ Not enough TVL data for {name}")
+        
         time.sleep(0.1)
 
     # 🔍 Debug output: print all deltas to understand why outflows might be empty
