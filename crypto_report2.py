@@ -31,7 +31,7 @@ def get_market_data():
     return fetch_json(url, params) or []
 
 def get_market_caps():
-    time.sleep(10)
+    time.sleep(6)
     url = "https://api.coingecko.com/api/v3/coins/categories"
     data = fetch_json(url)
 
