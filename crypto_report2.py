@@ -19,19 +19,19 @@ logging.basicConfig(level=logging.INFO)
 # --- API FETCHING FUNCTIONS ---
 
 def get_market_data():
-    time.sleep(3)
+    time.sleep(2)
     url = "https://api.coingecko.com/api/v3/coins/markets"
     params = {
         "vs_currency": "usd",
         "order": "market_cap_desc",
-        "per_page": 200, #checks only top movers for top 200 tokens
+        "per_page": 150, #checks only top movers for top 150 tokens
         "page": 1,
         "price_change_percentage": "24h",
     }
     return fetch_json(url, params) or []
 
 def get_market_caps():
-    time.sleep(3)
+    time.sleep(2)
     url = "https://api.coingecko.com/api/v3/coins/categories"
     data = fetch_json(url)
 
@@ -147,7 +147,7 @@ def get_crypto_news():
 
 # --- REPORT GENERATION ---
 def generate_report():
-    time.sleep(8)
+    time.sleep(4)
     market_data = get_market_data()
 
     time.sleep(8)
