@@ -19,7 +19,7 @@ logging.basicConfig(level=logging.INFO)
 # --- API FETCHING FUNCTIONS ---
 
 def get_market_data():
-    time.sleep(3)
+    time.sleep(1)
     url = "https://api.coingecko.com/api/v3/coins/markets"
     params = {
         "vs_currency": "usd",
@@ -31,7 +31,6 @@ def get_market_data():
     return fetch_json(url, params) or []
 
 def get_market_caps():
-    time.sleep(6)
     url = "https://api.coingecko.com/api/v3/coins/categories"
     data = fetch_json(url)
 
@@ -147,14 +146,16 @@ def get_crypto_news():
 
 # --- REPORT GENERATION ---
 def generate_report():
-    time.sleep(4)
+    time.sleep(5)
     market_data = get_market_data()
 
-    time.sleep(8)
+    time.sleep(10)
     market_caps = get_market_caps()
 
+    time.sleep(5)
     defillama_data = get_defillama_data()
 
+    time.sleep(2)
     crypto_news = get_crypto_news()
 
     inflow, outflow = get_chain_inflow_outflow_v2()
