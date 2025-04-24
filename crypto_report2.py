@@ -33,6 +33,8 @@ import logging
 import time
 
 def get_market_caps():
+    logging.info("🕒 Sleeping before fetching market caps to avoid rate limit...")
+    time.sleep(5)
     url = "https://api.coingecko.com/api/v3/coins/categories"
     data = fetch_json(url)
 
