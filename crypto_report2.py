@@ -24,7 +24,7 @@ def get_market_data():
     params = {
         "vs_currency": "usd",
         "order": "market_cap_desc",
-        "per_page": 150, #checks only top movers for top 150 tokens
+        "per_page": 500, #checks only top movers for top 500 tokens
         "page": 1,
         "price_change_percentage": "24h",
     }
