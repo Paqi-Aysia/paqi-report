@@ -313,7 +313,7 @@ def contact():
 
 @app.route("/accumulated-data")
 def accumulated_data():
-    path = "data/accumulated.json"
+    path = "/mnt/data/accumulated.json"
     if os.path.exists(path):
         with open(path, "r") as f:
             data = json.load(f)
@@ -344,7 +344,7 @@ def view_tvl_fallbacks():
     import json
     from flask import jsonify
 
-    fallback_path = "data/tvl_fallbacks.json"
+    fallback_path = "/mnt/data/tvl_fallbacks.json"
     if os.path.exists(fallback_path):
         with open(fallback_path, "r") as f:
             data = json.load(f)
