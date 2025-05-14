@@ -234,7 +234,7 @@ def generate_report():
     return report, structured_data
 
 def save_report(report):
-    folder = "reports"
+    folder = "/mnt/data/reports"
     ensure_folder(folder)
     filename = f"crypto_report_{datetime.now().strftime('%Y_%m_%d')}.txt"
     path = os.path.join(folder, filename)
