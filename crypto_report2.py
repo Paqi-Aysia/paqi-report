@@ -283,7 +283,7 @@ def home():
 
 @app.route("/daily-report")
 def daily_report():
-    folder = "reports"
+    folder = "/mnt/data/reports"
     if os.path.exists(folder) and os.listdir(folder):
         files = sorted(os.listdir(folder))
         latest = files[-1]
