@@ -4,7 +4,7 @@ import requests
 import logging
 import time
 
-def fetch_json(url, params=None, retries=5, delay=2, backoff=2):
+def fetch_json(url, params=None, retries=4, delay=2, backoff=2):
     for attempt in range(retries):
         try:
             response = requests.get(url, params=params, timeout=10)
