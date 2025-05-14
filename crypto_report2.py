@@ -242,7 +242,7 @@ def save_report(report):
         f.write(report)
     logging.info(f"Report saved to {path}")
 
-def save_structured_data(new_data, path="data/accumulated.json"):
+def save_structured_data(new_data, path="/mnt/data/accumulated.json"):
     if not os.path.exists("data"):
         os.makedirs("data")
 
@@ -354,7 +354,7 @@ def view_tvl_fallbacks():
     
 from datetime import date
 
-def should_run_backfill(path="data/accumulated.json"):
+def should_run_backfill(path="/mnt/data/accumulated.json"):
     if not os.path.exists(path) or os.stat(path).st_size == 0:
         return True
 
