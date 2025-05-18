@@ -148,10 +148,10 @@ def generate_report():
     time.sleep(4)
     market_data = get_market_data()
 
-    time.sleep(8)
+    time.sleep(6)
     market_caps = get_market_caps()
 
-    time.sleep(4)
+    time.sleep(5)
     defillama_data = get_defillama_data()
 
     time.sleep(2)
