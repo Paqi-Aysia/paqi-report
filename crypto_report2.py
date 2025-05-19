@@ -168,7 +168,8 @@ def generate_report():
         if coin:
             report += f"{coin['name']} ({coin['symbol'].upper()}): Current Price ${coin['current_price']} | 24-Hour Change: {coin['price_change_percentage_24h']:.2f}%\n"
 
-    report += "\n\nTop Movers (Last 24 Hours, Top 200 MC):\n"
+    report += "\n"
+    report += "\nTop Movers (Last 24 Hours, Top 200 MC):\n" 
 
     # Safely filter market data to only those with valid numeric price changes
     valid_market_data = [
