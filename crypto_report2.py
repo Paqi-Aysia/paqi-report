@@ -170,17 +170,26 @@ def generate_report():
 
     report += "\n"  # Leave a space after the Maxis section
 
-    # Prepare Top Movers only for structured data, not for the text report
+    # Validate and fallback if CoinGecko gives junk
     valid_market_data = [
         x for x in market_data 
         if isinstance(x.get("price_change_percentage_24h"), (int, float))
     ]
+
+    logging.info(f"✅ Found {len(valid_market_data)} valid coins")
 
     top_movers = sorted(
         valid_market_data, 
         key=lambda x: x["price_change_percentage_24h"], 
         reverse=True
     )[:5]
+
+    if not top_movers:
+        logging.warning("⚠️ No valid top movers found — fallback to first 5 coins with price")
+        top_movers = [
+            x for x in market_data 
+            if x.get("current_price") is not None
+        ][:5]
 
     report += "\nAggregate Market Capitalizations:\n"
     for sector, cap in market_caps.items():
