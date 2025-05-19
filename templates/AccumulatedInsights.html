@@ -214,6 +214,28 @@
             }
         }
         });
+
+      // === Render most recent day's top movers as HTML list ===
+const latestDay = records[records.length - 1];
+const topMoverList = latestDay.top_movers || [];
+
+const topMoverTextDiv = document.createElement("div");
+topMoverTextDiv.style.marginTop = "20px";
+topMoverTextDiv.style.fontSize = "0.95rem";
+topMoverTextDiv.style.color = "#ccc";
+
+if (topMoverList.length > 0) {
+topMoverTextDiv.innerHTML = topMoverList.map(
+  c =>
+    `${c.name} (${c.symbol.toUpperCase()}): $${parseFloat(c.price).toFixed(4)} | 24-Hour Change: ${c.change_24h.toFixed(2)}%`
+).join("<br/>");
+} else {
+topMoverTextDiv.innerHTML = "No top movers available for today.";
+}
+
+// Inject it below the Top Movers canvas
+document.getElementById('topMoversChart').parentElement.appendChild(topMoverTextDiv);
+
                 // ---- Market Cap Chart ----
         const categories = Object.keys(records[0].market_caps);
         const categoryData = {};
