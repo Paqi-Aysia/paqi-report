@@ -145,13 +145,13 @@ def get_crypto_news():
 
 # --- REPORT GENERATION ---
 def generate_report():
-    time.sleep(3)
+    time.sleep(2)
     market_data = get_market_data()
 
-    time.sleep(3)
+    time.sleep(2)
     market_caps = get_market_caps()
 
-    time.sleep(5)
+    time.sleep(4)
     defillama_data = get_defillama_data()
 
     time.sleep(2)
