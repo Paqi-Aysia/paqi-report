@@ -168,30 +168,19 @@ def generate_report():
         if coin:
             report += f"{coin['name']} ({coin['symbol'].upper()}): Current Price ${coin['current_price']} | 24-Hour Change: {coin['price_change_percentage_24h']:.2f}%\n"
 
-    report += "\n\n"  
+    report += "\n"  # Leave a space after the Maxis section
 
-    report += "Top Movers (Last 24 Hours, Top 200 MC):\n"
-
-    # Safely filter market data to only those with valid numeric price changes
+    # Prepare Top Movers only for structured data, not for the text report
     valid_market_data = [
         x for x in market_data 
         if isinstance(x.get("price_change_percentage_24h"), (int, float))
     ]
 
-    # Sort the valid entries by 24-hour price change, descending
     top_movers = sorted(
         valid_market_data, 
         key=lambda x: x["price_change_percentage_24h"], 
         reverse=True
     )[:5]
-
-    # Format the report output
-    for coin in top_movers:
-        report += (
-            f"{coin['name']} ({coin['symbol']}): "
-            f"${coin['current_price']} | "
-            f"24-Hour Change: {coin['price_change_percentage_24h']:.2f}%\n"
-        )
 
     report += "\nAggregate Market Capitalizations:\n"
     for sector, cap in market_caps.items():
