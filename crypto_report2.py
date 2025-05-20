@@ -23,7 +23,7 @@ def get_market_data():
     params = {
         "vs_currency": "usd",
         "order": "market_cap_desc",
-        "per_page": 300, #checks only top movers for top 300 tokens
+        "per_page": 500, #checks only top movers for top 500 tokens
         "page": 1,
         "price_change_percentage": "24h",
     }
@@ -192,7 +192,7 @@ def generate_report():
         ][:5]
 
         # ✅ INSERT THIS BLOCK HERE:
-    report += "Top Movers (Last 24 Hours, Top 300 MC):\n"
+    report += "Top Movers (Last 24 Hours, Top 500 MC):\n"
     for coin in top_movers:
         name = coin["name"]
         symbol = coin["symbol"].upper()
