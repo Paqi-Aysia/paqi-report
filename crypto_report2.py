@@ -191,6 +191,15 @@ def generate_report():
             if x.get("current_price") is not None
         ][:5]
 
+        # ✅ INSERT THIS BLOCK HERE:
+    report += "Top Movers (Last 24 Hours, Top 300 MC):\n"
+    for coin in top_movers:
+        name = coin["name"]
+        symbol = coin["symbol"].upper()
+        price = f"${coin['current_price']:.4f}"
+        change = f"{coin.get('price_change_percentage_24h', 0):.2f}%"
+        report += f"{name} ({symbol}): {price} | 24-Hour Change: {change}\n"
+
     report += "\nAggregate Market Capitalizations:\n"
     for sector, cap in market_caps.items():
         report += f"{sector}: ${cap:,.2f}\n"
