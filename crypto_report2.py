@@ -154,7 +154,7 @@ def generate_report():
     time.sleep(4)
     defillama_data = get_defillama_data()
 
-    time.sleep(2)
+    time.sleep(3)
     crypto_news = get_crypto_news()
 
     inflow, outflow = get_chain_inflow_outflow_v2()
