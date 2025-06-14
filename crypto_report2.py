@@ -224,7 +224,7 @@ def generate_report():
         news_items = {n["title"]: n for n in crypto_news}.values()
         report += "\nHot News:\n"
         for n in list(news_items)[:10]:
-            report += f"{n['title']} - {n['url']}\n"
+            report += f"{n['title']} - {n.get('original_url', 'No URL')}\n"
 
     btc = next((c for c in market_data if c['id'] == 'bitcoin'), {})
     eth = next((c for c in market_data if c['id'] == 'ethereum'), {})
