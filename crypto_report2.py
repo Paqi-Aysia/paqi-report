@@ -126,7 +126,7 @@ def get_chain_inflow_outflow_v2():
     return inflows, outflows
 
 def get_crypto_news():
-    url = "https://cryptopanic.com/api/v2/posts/"
+    url = "https://cryptopanic.com/api/developer/v2/posts/"
     token = os.getenv("CRYPTOPANIC_TOKEN")
     if not token:
         print("❗CRYPTO PANIC TOKEN NOT FOUND")
