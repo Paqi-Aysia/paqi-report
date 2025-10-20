@@ -6,6 +6,7 @@ load_dotenv()
 import json
 import time
 import logging
+from services.usde_service import get_usde_snapshot, refresh_usde_snapshot
 from datetime import datetime
 from flask import Flask, jsonify, render_template
 # from apscheduler.schedulers.blocking import BlockingScheduler
@@ -327,8 +328,18 @@ def accumulated():
     return render_template("AccumulatedInsights.html")
 
 @app.route("/USDe")
-def blog():
-    return render_template("blank.html", title="USDe Analysis")
+def usde_page():
+    return render_template("USDe.html")
+
+@app.route("/usde-data")
+def usde_data():
+    data = get_usde_snapshot()
+    return jsonify({"status": "success", "data": data})
+
+@app.post("/usde/refresh")
+def usde_refresh():
+    data = refresh_usde_snapshot()
+    return jsonify({"status": "ok", "as_of": data.get("as_of")})
 
 @app.route("/paqi")
 def paqi():

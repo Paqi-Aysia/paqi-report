@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>USDe Analysis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin:0; padding:0; font-family:'Inter',sans-serif; background:#000; color:#f0f0f0; }
+    header { padding:20px; text-align:center; background:#000; }
+    header h1 { margin:0; font-size:2.2rem; font-weight:700; color:#fff; }
+    header nav a { margin:0 15px; color:#fff; text-decoration:none; font-weight:600; }
+    header nav a:hover { color:#00bcd4; }
+    .container { max-width:900px; margin:0 auto; padding:20px; }
+    .card { border:2px solid #00ffff; border-radius:8px; padding:18px; margin-bottom:18px; }
+    h2 { margin:0 0 10px 0; font-size:1.4rem; }
+    .muted { opacity:.7; font-size:.95rem; }
+    .kvs { display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+    .kv { background:#0a0a0a; padding:12px; border-radius:8px; }
+    .kv .k { opacity:.8; font-size:.9rem; }
+    .kv .v { font-size:1.2rem; font-weight:700; }
+    footer { text-align:center; padding:10px; background:#000; color:#808080; font-size:.9rem; }
+    .spinner {
+        border: 4px solid rgba(0, 255, 255, 0.2);
+        border-top: 4px solid #00ffff;
+        border-radius: 50%;
+        width: 28px;
+        height: 28px;
+        animation: spin 1s linear infinite;
+        margin: 10px auto;
+        box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff88;
+        }
+    @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Paqi Report</h1>
+    <nav>
+      <a href="/">Paqi Daily</a>
+      <a href="/accumulated">Accumulated Insights</a>
+      <a href="/USDe">USDe Analysis</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>USDe Snapshot</h2>
+      <div id="asof" class="muted">Loading…</div>
+      <div class="kvs" style="margin-top:10px;">
+        <div class="kv"><div class="k">Price (USD)</div><div id="price" class="v"><div class="spinner"></div></div></div>
+        <div class="kv"><div class="k">Supply</div><div id="supply" class="v"><div class="spinner"></div></div></div>
+        <div class="kv"><div class="k">Peg Deviation (bps)</div><div id="peg" class="v"><div class="spinner"></div></div></div>
+        <div class="kv"><div class="k">TVL (Ethena)</div><div id="tvl" class="v"><div class="spinner"></div></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Sources</h2>
+      <ul id="sources" class="muted" style="margin:0; padding-left:18px;"></ul>
+    </div>
+  </div>
+
+  <footer>&copy; 2025 The Paqi Report. All rights reserved.</footer>
+
+  <script>
+    function fmtUSD(x, d=2) {
+      if (x === null || x === undefined) return "—";
+      if (typeof x === "number") return "$" + x.toLocaleString(undefined, {maximumFractionDigits:d});
+      return x;
+    }
+    function fmtPlain(x, d=0) {
+      if (x === null || x === undefined) return "—";
+      if (typeof x === "number") return x.toLocaleString(undefined, {maximumFractionDigits:d});
+      return x;
+    }
+    function ts(sec) {
+      if (!sec) return "—";
+      const dt = new Date(sec * 1000);
+      return dt.toLocaleString();
+    }
+
+    fetch('/usde-data')
+      .then(r => r.json())
+      .then(payload => {
+        const data = payload?.data || {};
+        document.getElementById('asof').textContent = "Last updated: " + ts(data.as_of);
+        document.getElementById('price').textContent  = (typeof data.price === "number") ? data.price.toFixed(4) : "—";
+        document.getElementById('supply').textContent = fmtPlain(data.supply, 0);
+        document.getElementById('peg').textContent    = (data.peg_deviation_bps ?? "—");
+        document.getElementById('tvl').textContent    = fmtUSD(data.tvl, 0);
+
+        const ul = document.getElementById('sources');
+        (data.sources || []).forEach(s => {
+          const li = document.createElement('li');
+          li.textContent = s;
+          ul.appendChild(li);
+        });
+      })
+      .catch(err => {
+        document.getElementById('asof').textContent = "Failed to load USDe snapshot.";
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
