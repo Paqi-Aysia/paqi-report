@@ -326,9 +326,9 @@ def daily_report():
 def accumulated():
     return render_template("AccumulatedInsights.html")
 
-@app.route("/blog")
+@app.route("/USDe")
 def blog():
-    return render_template("blank.html", title="Blog Posts")
+    return render_template("blank.html", title="USDe Analysis")
 
 @app.route("/paqi")
 def paqi():
