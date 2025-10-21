@@ -18,22 +18,44 @@ def get_usde_snapshot() -> dict:
             pass
     return {"as_of": None, "error": "No snapshot yet"}
 
+import requests
+
 def refresh_usde_snapshot() -> dict:
-    """
-    For now: write a tiny placeholder so the page renders.
-    We’ll replace this with real API fetches in the next step.
-    """
     _ensure_data_dir()
-    data = {
-        "as_of": int(time.time()),
-        "price": None,
-        "supply": None,
-        "peg_deviation_bps": None,
-        "tvl": None,
-        "backing": {"stETH": None, "ETH": None, "other": None},
-        "yield_components": {"staking": None, "funding": None, "other": None},
-        "notes": [],
-        "sources": ["(placeholder)"],
-    }
+    data = {"as_of": int(time.time()), "sources": []}
+
+    # --- 1. CoinGecko for price & supply ---
+    try:
+        url = "https://api.coingecko.com/api/v3/coins/ethena-usde"
+        cg = requests.get(url, timeout=10).json()
+        data["price"] = cg["market_data"]["current_price"]["usd"]
+        data["supply"] = cg["market_data"]["circulating_supply"]
+        data["sources"].append("CoinGecko")
+    except Exception as e:
+        data["price"] = None
+        data["supply"] = None
+        data["sources"].append(f"CoinGecko Error: {e}")
+
+    # --- 2. DeFiLlama for TVL ---
+    try:
+        url = "https://api.llama.fi/protocol/ethena"
+        llama = requests.get(url, timeout=10).json()
+        data["tvl"] = llama.get("tvl", None)
+        data["sources"].append("DeFiLlama")
+    except Exception as e:
+        data["tvl"] = None
+        data["sources"].append(f"DeFiLlama Error: {e}")
+
+    # --- 3. Approximate peg deviation (bps) ---
+    try:
+        if data.get("price"):
+            peg_dev = abs((data["price"] - 1.0) * 10000)
+            data["peg_deviation_bps"] = round(peg_dev, 2)
+        else:
+            data["peg_deviation_bps"] = None
+    except Exception:
+        data["peg_deviation_bps"] = None
+
+    # --- Save snapshot ---
     SNAPSHOT.write_text(json.dumps(data, indent=2))
     return data
