@@ -6,31 +6,213 @@
   <title>USDe Analysis</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body { margin:0; padding:0; font-family:'Inter',sans-serif; background:#000; color:#f0f0f0; }
-    header { padding:20px; text-align:center; background:#000; }
-    header h1 { margin:0; font-size:2.2rem; font-weight:700; color:#fff; }
-    header nav a { margin:0 15px; color:#fff; text-decoration:none; font-weight:600; }
-    header nav a:hover { color:#00bcd4; }
-    .container { max-width:900px; margin:0 auto; padding:20px; }
-    .card { border:2px solid #00ffff; border-radius:8px; padding:18px; margin-bottom:18px; }
-    h2 { margin:0 0 10px 0; font-size:1.4rem; }
-    .muted { opacity:.7; font-size:.95rem; }
-    .kvs { display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
-    .kv { background:#0a0a0a; padding:12px; border-radius:8px; }
-    .kv .k { opacity:.8; font-size:.9rem; }
-    .kv .v { font-size:1.2rem; font-weight:700; }
-    footer { text-align:center; padding:10px; background:#000; color:#808080; font-size:.9rem; }
+    /* ===== your existing styles ===== */
+    body {
+      margin:0;
+      padding:0;
+      font-family:'Inter',sans-serif;
+      background:#000;
+      color:#f0f0f0;
+    }
+    header {
+      padding:20px;
+      text-align:center;
+      background:#000;
+    }
+    header h1 {
+      margin:0;
+      font-size:2.2rem;
+      font-weight:700;
+      color:#fff;
+    }
+    header nav a {
+      margin:0 15px;
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+    }
+    header nav a:hover {
+      color:#00bcd4;
+    }
+    .container {
+      max-width:900px;
+      margin:0 auto;
+      padding:20px;
+    }
+    .card {
+      border:2px solid #00ffff;
+      border-radius:8px;
+      padding:18px;
+      margin-bottom:18px;
+      background:#000;
+      box-shadow:0 0 16px rgba(0,255,255,0.15);
+    }
+    h2 {
+      margin:0 0 10px 0;
+      font-size:1.4rem;
+      font-weight:600;
+      color:#fff;
+    }
+    .muted {
+      opacity:.7;
+      font-size:.95rem;
+    }
+    .kvs {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    .kv {
+      background:#0a0a0a;
+      padding:12px;
+      border-radius:8px;
+    }
+    .kv .k {
+      opacity:.8;
+      font-size:.9rem;
+    }
+    .kv .v {
+      font-size:1.2rem;
+      font-weight:700;
+      color:#fff;
+      min-height:1.4em;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      flex-wrap:wrap;
+    }
+    footer {
+      text-align:center;
+      padding:10px;
+      background:#000;
+      color:#808080;
+      font-size:.9rem;
+    }
     .spinner {
-        border: 4px solid rgba(0, 255, 255, 0.2);
-        border-top: 4px solid #00ffff;
-        border-radius: 50%;
-        width: 28px;
-        height: 28px;
-        animation: spin 1s linear infinite;
-        margin: 10px auto;
-        box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff88;
-        }
-    @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+      border: 4px solid rgba(0, 255, 255, 0.2);
+      border-top: 4px solid #00ffff;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      animation: spin 1s linear infinite;
+      margin: 10px auto;
+      box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff88;
+    }
+    @keyframes spin{
+      0%{transform:rotate(0)}
+      100%{transform:rotate(360deg)}
+    }
+
+    /* ===== new risk section styles ===== */
+    .risk-section-wrapper {
+      max-width:900px;
+      margin:30px auto 60px auto;
+      padding:0 20px;
+      color:#f0f0f0;
+      font-family:'Inter',sans-serif;
+    }
+
+    .risk-header {
+      font-size:1.5rem;
+      font-weight:600;
+      margin-bottom:16px;
+      color:#fff;
+      text-shadow:0 0 8px rgba(0,255,255,0.4);
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px;
+    }
+
+    .risk-header .risk-pill {
+      font-size:0.7rem;
+      font-weight:600;
+      background:#000;
+      border:1px solid #00ffff;
+      border-radius:999px;
+      padding:4px 8px;
+      color:#00ffff;
+      box-shadow:0 0 8px #00ffff55;
+      line-height:1.2;
+    }
+
+    .risk-grid {
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+
+    @media (min-width:700px){
+      .risk-grid {
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    .risk-card {
+      background:#000;
+      border:2px solid #00ffff;
+      border-radius:8px;
+      padding:16px 20px;
+      box-shadow:0 0 16px rgba(0,255,255,0.15);
+      font-size:0.9rem;
+      line-height:1.4;
+      color:#d0d0d0;
+    }
+
+    .risk-title-row {
+      display:flex;
+      flex-wrap:wrap;
+      align-items:baseline;
+      justify-content:space-between;
+      margin-bottom:8px;
+    }
+
+    .risk-title {
+      font-size:1rem;
+      font-weight:600;
+      color:#fff;
+      margin:0;
+    }
+
+    .risk-severity {
+      font-size:0.7rem;
+      font-weight:600;
+      padding:2px 6px;
+      border-radius:4px;
+      line-height:1.2;
+      border:1px solid #666;
+      color:#bbb;
+    }
+
+    .risk-severity.risk-warn {
+      border-color:#ffb000;
+      color:#ffb000;
+      box-shadow:0 0 8px rgba(255,176,0,0.4);
+    }
+
+    .risk-severity.risk-critical {
+      border-color:#ff0044;
+      color:#ff0044;
+      box-shadow:0 0 8px rgba(255,0,68,0.5);
+    }
+
+    .risk-body {
+      font-size:0.85rem;
+      line-height:1.4;
+      color:#d0d0d0;
+    }
+
+    .risk-defense {
+      font-size:0.75rem;
+      line-height:1.4;
+      color:#9eeeff;
+      margin-top:8px;
+    }
+    .risk-defense span {
+      font-weight:600;
+      color:#00ffff;
+    }
   </style>
 </head>
 <body>
@@ -45,22 +227,163 @@
   </header>
 
   <div class="container">
+    <!-- ========== SNAPSHOT CARD ========== -->
     <div class="card">
       <h2>USDe Snapshot</h2>
       <div id="asof" class="muted">Loading…</div>
-      <div class="kvs" style="margin-top:10px;">
-        <div class="kv"><div class="k">Price (USD)</div><div id="price" class="v"><div class="spinner"></div></div></div>
-        <div class="kv"><div class="k">Supply</div><div id="supply" class="v"><div class="spinner"></div></div></div>
-        <div class="kv"><div class="k">Peg Deviation (bps)</div><div id="peg" class="v"><div class="spinner"></div></div></div>
-        <div class="kv"><div class="k">TVL (Ethena)</div><div id="tvl" class="v"><div class="spinner"></div></div></div>
+
+      <div class="kvs">
+        <div class="kv">
+          <div class="k">Price (USD)</div>
+          <div id="price" class="v"><div class="spinner"></div></div>
+        </div>
+        <div class="kv">
+          <div class="k">Supply</div>
+          <div id="supply" class="v"><div class="spinner"></div></div>
+        </div>
+        <div class="kv">
+          <div class="k">Peg Deviation (bps)</div>
+          <div id="peg" class="v"><div class="spinner"></div></div>
+        </div>
+        <div class="kv">
+          <div class="k">TVL (Ethena)</div>
+          <div id="tvl" class="v"><div class="spinner"></div></div>
+        </div>
       </div>
     </div>
 
+    <!-- ========== SOURCES CARD ========== -->
     <div class="card">
       <h2>Sources</h2>
       <ul id="sources" class="muted" style="margin:0; padding-left:18px;"></ul>
     </div>
-  </div>
+
+    <!-- ========== RISK FACTORS SECTION ========== -->
+    <section class="risk-section-wrapper">
+      <div class="risk-header">
+        <div>Key Risk Factors</div>
+        <div class="risk-pill">Why USDe could break</div>
+      </div>
+
+      <div class="risk-grid">
+
+        <!-- Funding Risk -->
+        <div class="risk-card">
+          <div class="risk-title-row">
+            <h3 class="risk-title">Funding Risk (slow bleed)</h3>
+            <div id="risk-severity-funding" class="risk-severity">stable</div>
+          </div>
+          <div class="risk-body">
+            USDe stays “delta neutral” by shorting BTC/ETH perpetual futures. When funding is positive,
+            shorts earn money. When funding turns negative for long stretches, Ethena has to pay funding
+            out of the backing. If that persists, backing per USDe can start quietly eroding instead
+            of instantly blowing up.
+          </div>
+          <div class="risk-defense">
+            <span>Defense (Ethena claim):</span>
+            reserve fund to absorb negative funding, rotation into cash/T-bill-like yield when funding is weak,
+            and the view that BTC/ETH funding tends to revert positive over time.
+          </div>
+        </div>
+
+        <!-- Liquidation Risk -->
+        <div class="risk-card">
+          <div class="risk-title-row">
+            <h3 class="risk-title">Liquidation Risk (collateral vs hedge)</h3>
+            <div id="risk-severity-liquidation" class="risk-severity">stable</div>
+          </div>
+          <div class="risk-body">
+            Ethena sometimes posts staked ETH / LSTs as collateral while shorting ETH/BTC perps.
+            If that collateral suddenly trades at a steep discount vs the asset they’re shorting,
+            centralized exchanges can start forcibly trimming Ethena’s hedge (“incremental liquidation”),
+            which can realize losses and weaken backing.
+          </div>
+          <div class="risk-defense">
+            <span>Defense (Ethena claim):</span>
+            very low leverage, multiple exchanges instead of one, 24/7 human monitoring, and historically tight
+            stETH:ETH spread since ETH withdrawals went live.
+          </div>
+        </div>
+
+        <!-- Custodial / Settlement Risk -->
+        <div class="risk-card">
+          <div class="risk-title-row">
+            <h3 class="risk-title">Custodial / Settlement Risk</h3>
+            <div id="risk-severity-custody" class="risk-severity">trust-based</div>
+          </div>
+          <div class="risk-body">
+            Assets sit with “off-exchange settlement” custodians (like Copper ClearLoop) instead of directly
+            on Binance/Bybit. If a custodian halts withdrawals, fails operationally, or stalls settlement,
+            Ethena’s ability to move funds, settle PnL, or fulfill redemptions could get disrupted even if
+            assets are legally segregated / bankruptcy-remote.
+          </div>
+          <div class="risk-defense">
+            <span>Defense (Ethena claim):</span>
+            diversify across multiple custodians, keep assets in segregated structures, settle PnL frequently
+            so no single exchange ever “owes” too much at once.
+          </div>
+        </div>
+
+        <!-- Exchange Failure Risk -->
+        <div class="risk-card">
+          <div class="risk-title-row">
+            <h3 class="risk-title">Exchange Failure Risk</h3>
+            <div id="risk-severity-exchange" class="risk-severity">event-driven</div>
+          </div>
+          <div class="risk-body">
+            The hedge itself runs on centralized exchanges. If a major venue blows up mid-move (FTX moment),
+            Ethena can temporarily lose that hedge and any unsettled PnL on that venue. In a violent market,
+            that leaves them exposed to raw crypto direction until they re-hedge somewhere else.
+          </div>
+          <div class="risk-defense">
+            <span>Defense (Ethena claim):</span>
+            don’t leave backing assets on-exchange, settle PnL often, and spread exposure across multiple
+            exchanges so any one failure is survivable.
+          </div>
+        </div>
+
+        <!-- Backing Asset Risk -->
+        <div class="risk-card">
+          <div class="risk-title-row">
+            <h3 class="risk-title">Backing Asset Risk</h3>
+            <div id="risk-severity-backing" class="risk-severity">low % exposure</div>
+          </div>
+          <div class="risk-body">
+            Part of USDe’s backing is staked ETH derivatives (stETH, mETH, etc.) and some stables,
+            not just “pure cash.” If an LST depegs, gets slashed, or becomes illiquid exactly when
+            it’s needed, backing quality drops even if the peg number still looks fine.
+          </div>
+          <div class="risk-defense">
+            <span>Defense (Ethena claim):</span>
+            keep LST share relatively small (~6%), diversify instead of betting on only one LST,
+            and rotate out of anything that starts to look stressed.
+          </div>
+        </div>
+
+        <!-- Structural / Regime Risk -->
+        <div class="risk-card">
+          <div class="risk-title-row">
+            <h3 class="risk-title">Structural Sustainability Risk</h3>
+            <div id="risk-severity-structural" class="risk-severity risk-warn">monitor</div>
+          </div>
+          <div class="risk-body">
+            The model works long-term if perp shorts usually earn and negative stretches can be bridged
+            by staking yield, cash yield, and an internal reserve. If that regime breaks for long enough,
+            it doesn’t instantly implode — the backing just bleeds below $1 per USDe unless yield comes back
+            or new capital steps in.
+          </div>
+          <div class="risk-defense">
+            <span>Your take:</span>
+            this behaves more like an actively managed macro trade than a boring “digital dollar.”
+            Insurance funds have to actually be deep and liquid, not just promised.
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- end risk-section-wrapper -->
+
+  </div> <!-- /.container -->
 
   <footer>&copy; 2025 The Paqi Report. All rights reserved.</footer>
 
@@ -85,18 +408,31 @@
       .then(r => r.json())
       .then(payload => {
         const data = payload?.data || {};
-        document.getElementById('asof').textContent = "Last updated: " + ts(data.as_of);
+
+        // fill snapshot
+        document.getElementById('asof').textContent   = "Last updated: " + ts(data.as_of);
         document.getElementById('price').textContent  = (typeof data.price === "number") ? data.price.toFixed(4) : "—";
         document.getElementById('supply').textContent = fmtPlain(data.supply, 0);
         document.getElementById('peg').textContent    = (data.peg_deviation_bps ?? "—");
         document.getElementById('tvl').textContent    = fmtUSD(data.tvl, 0);
 
+        // fill sources
         const ul = document.getElementById('sources');
         (data.sources || []).forEach(s => {
           const li = document.createElement('li');
           li.textContent = s;
           ul.appendChild(li);
         });
+
+        // dynamic risk pill example:
+        const pegBps = data.peg_deviation_bps;
+        if (typeof pegBps === "number" && Math.abs(pegBps) > 50) {
+          const pill = document.getElementById("risk-severity-funding");
+          if (pill) {
+            pill.textContent = "watch";
+            pill.classList.add("risk-warn");
+          }
+        }
       })
       .catch(err => {
         document.getElementById('asof').textContent = "Failed to load USDe snapshot.";
