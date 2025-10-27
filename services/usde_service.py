@@ -2,6 +2,8 @@
 from __future__ import annotations
 import json, time
 from pathlib import Path
+from typing import Optional, Dict, Any
+from utils import fetch_json  # uses your retry/backoff logic
 
 DATA_DIR = Path("/mnt/data")
 SNAPSHOT = DATA_DIR / "usde.json"
@@ -10,7 +12,7 @@ def _ensure_data_dir():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 def get_usde_snapshot() -> dict:
-    """Read the latest saved USDe snapshot (or a placeholder if none exists)."""
+    """Return the most recent saved snapshot, or a placeholder if none exists."""
     if SNAPSHOT.exists():
         try:
             return json.loads(SNAPSHOT.read_text())
@@ -18,44 +20,111 @@ def get_usde_snapshot() -> dict:
             pass
     return {"as_of": None, "error": "No snapshot yet"}
 
-import requests
+# ---------- Utility helpers ----------
 
-def refresh_usde_snapshot() -> dict:
-    _ensure_data_dir()
-    data = {"as_of": int(time.time()), "sources": []}
-
-    # --- 1. CoinGecko for price & supply ---
+def _safe_float(x) -> Optional[float]:
+    """Convert to float if possible, else return None."""
+    if isinstance(x, (int, float)):
+        return float(x)
     try:
-        url = "https://api.coingecko.com/api/v3/coins/ethena-usde"
-        cg = requests.get(url, timeout=10).json()
-        data["price"] = cg["market_data"]["current_price"]["usd"]
-        data["supply"] = cg["market_data"]["circulating_supply"]
-        data["sources"].append("CoinGecko")
-    except Exception as e:
-        data["price"] = None
-        data["supply"] = None
-        data["sources"].append(f"CoinGecko Error: {e}")
-
-    # --- 2. DeFiLlama for TVL ---
-    try:
-        url = "https://api.llama.fi/protocol/ethena"
-        llama = requests.get(url, timeout=10).json()
-        data["tvl"] = llama.get("tvl", None)
-        data["sources"].append("DeFiLlama")
-    except Exception as e:
-        data["tvl"] = None
-        data["sources"].append(f"DeFiLlama Error: {e}")
-
-    # --- 3. Approximate peg deviation (bps) ---
-    try:
-        if data.get("price"):
-            peg_dev = abs((data["price"] - 1.0) * 10000)
-            data["peg_deviation_bps"] = round(peg_dev, 2)
-        else:
-            data["peg_deviation_bps"] = None
+        return float(x)
     except Exception:
-        data["peg_deviation_bps"] = None
+        return None
 
-    # --- Save snapshot ---
+# ---------- Data fetchers ----------
+
+def _fetch_price() -> tuple[Optional[float], str]:
+    """
+    Try to get USDe price from CoinGecko simple/price endpoint using several IDs.
+    Returns (price, info_string)
+    """
+    ids_to_try = ["usde", "ethena-usde", "ethena-usd"]
+    for cid in ids_to_try:
+        res = fetch_json(
+            "https://api.coingecko.com/api/v3/simple/price",
+            params={"ids": cid, "vs_currencies": "usd"}
+        )
+        if isinstance(res, dict) and cid in res:
+            usd_val = res[cid].get("usd")
+            p = _safe_float(usd_val)
+            if p is not None:
+                return p, f"CoinGecko simple price ({cid})"
+    return None, "CoinGecko simple price FAILED"
+
+def _fetch_supply() -> tuple[Optional[float], str]:
+    """
+    Try to get circulating supply from DeFiLlama stablecoins dataset.
+    Returns (supply, info_string)
+    """
+    res = fetch_json("https://stablecoins.llama.fi/stablecoins?includePrices=true")
+    if not res or "peggedAssets" not in res:
+        return None, "DeFiLlama stablecoins FAILED (no peggedAssets)"
+    for asset in res["peggedAssets"]:
+        if asset.get("symbol", "").upper() == "USDE":
+            hist = asset.get("circulating") or asset.get("chainCirculating") or []
+            if isinstance(hist, list) and hist:
+                last = hist[-1]
+                for k in ("circulating", "totalCirculating"):
+                    if k in last:
+                        sup = _safe_float(last[k])
+                        if sup is not None:
+                            return sup, "DeFiLlama stablecoins (hist)"
+            direct = _safe_float(asset.get("circulating"))
+            if direct is not None:
+                return direct, "DeFiLlama stablecoins (direct)"
+    return None, "DeFiLlama stablecoins FAILED (no USDe match)"
+
+def _fetch_tvl() -> tuple[Optional[float], str]:
+    """
+    Try numeric DeFiLlama tvl/ethena endpoint, then fallback to /protocol/ethena.
+    Returns (tvl, info_string)
+    """
+    tvl_num = fetch_json("https://api.llama.fi/tvl/ethena")
+    if isinstance(tvl_num, (int, float)):
+        return float(tvl_num), "DeFiLlama tvl/ethena"
+
+    proto = fetch_json("https://api.llama.fi/protocol/ethena")
+    if isinstance(proto, dict):
+        tvl_val = _safe_float(proto.get("tvl"))
+        if tvl_val is not None:
+            return tvl_val, "DeFiLlama protocol/ethena"
+    return None, "DeFiLlama tvl FAILED"
+
+def _peg_bps(price: Optional[float]) -> Optional[float]:
+    """Calculate basis points deviation from $1 peg."""
+    if price is None:
+        return None
+    return round((price - 1.0) * 10000, 2)
+
+# ---------- Main snapshot builder ----------
+
+def refresh_usde_snapshot() -> Dict[str, Any]:
+    """Fetch latest data from APIs, build snapshot, and save it."""
+    _ensure_data_dir()
+
+    price, price_src = _fetch_price()
+    supply, supply_src = _fetch_supply()
+    tvl, tvl_src = _fetch_tvl()
+
+    data = {
+        "as_of": int(time.time()),
+        "price": price,
+        "supply": supply,
+        "tvl": tvl,
+        "peg_deviation_bps": _peg_bps(price),
+        "backing": {
+            "stETH": None,
+            "ETH": None,
+            "other": None
+        },
+        "yield_components": {
+            "staking": None,
+            "funding": None,
+            "other": None
+        },
+        "notes": [],
+        "sources": [price_src, supply_src, tvl_src],
+    }
+
     SNAPSHOT.write_text(json.dumps(data, indent=2))
     return data
