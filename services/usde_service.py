@@ -35,10 +35,12 @@ def _safe_float(x) -> Optional[float]:
 
 def _fetch_price() -> tuple[Optional[float], str]:
     """
-    Try to get USDe price from CoinGecko simple/price endpoint using several IDs.
-    Returns (price, info_string)
+    Try CoinGecko simple/price first (fast, low data),
+    then fall back to full coin data for 'ethena-usde'.
     """
     ids_to_try = ["usde", "ethena-usde", "ethena-usd"]
+
+    # Try simple/price first
     for cid in ids_to_try:
         res = fetch_json(
             "https://api.coingecko.com/api/v3/simple/price",
@@ -49,30 +51,55 @@ def _fetch_price() -> tuple[Optional[float], str]:
             p = _safe_float(usd_val)
             if p is not None:
                 return p, f"CoinGecko simple price ({cid})"
-    return None, "CoinGecko simple price FAILED"
+
+    # Fallback: full coin endpoint
+    full = fetch_json("https://api.coingecko.com/api/v3/coins/ethena-usde")
+    # shape: { "market_data": { "current_price": {"usd": 0.999}, ... } }
+    if isinstance(full, dict):
+        md = full.get("market_data", {})
+        cp = md.get("current_price", {})
+        p = _safe_float(cp.get("usd"))
+        if p is not None:
+            return p, "CoinGecko /coins/ethena-usde market_data.current_price.usd"
+
+    return None, "CoinGecko FAILED"
 
 def _fetch_supply() -> tuple[Optional[float], str]:
     """
     Try to get circulating supply from DeFiLlama stablecoins dataset.
-    Returns (supply, info_string)
+    Fallback to CoinGecko /coins/ethena-usde if Llama fails.
     """
     res = fetch_json("https://stablecoins.llama.fi/stablecoins?includePrices=true")
-    if not res or "peggedAssets" not in res:
-        return None, "DeFiLlama stablecoins FAILED (no peggedAssets)"
-    for asset in res["peggedAssets"]:
-        if asset.get("symbol", "").upper() == "USDE":
-            hist = asset.get("circulating") or asset.get("chainCirculating") or []
-            if isinstance(hist, list) and hist:
-                last = hist[-1]
-                for k in ("circulating", "totalCirculating"):
-                    if k in last:
-                        sup = _safe_float(last[k])
-                        if sup is not None:
-                            return sup, "DeFiLlama stablecoins (hist)"
-            direct = _safe_float(asset.get("circulating"))
-            if direct is not None:
-                return direct, "DeFiLlama stablecoins (direct)"
-    return None, "DeFiLlama stablecoins FAILED (no USDe match)"
+
+    if res and "peggedAssets" in res:
+        for asset in res["peggedAssets"]:
+            symbol = str(asset.get("symbol", "")).lower()
+            name = str(asset.get("name", "")).lower()
+            if "usde" in symbol or "usde" in name:
+                # Try history first
+                hist = asset.get("circulating") or asset.get("chainCirculating") or []
+                if isinstance(hist, list) and hist:
+                    last = hist[-1]
+                    for k in ("circulating", "totalCirculating"):
+                        cand = _safe_float(last.get(k))
+                        if cand is not None:
+                            return cand, "DeFiLlama stablecoins (hist match)"
+
+                # Fallback direct
+                cand = _safe_float(asset.get("circulating"))
+                if cand is not None:
+                    return cand, "DeFiLlama stablecoins (direct match)"
+
+    # Fallback: CoinGecko full endpoint
+    full = fetch_json("https://api.coingecko.com/api/v3/coins/ethena-usde")
+    # shape: { "market_data": { "circulating_supply": 12345.0 } }
+    if isinstance(full, dict):
+        md = full.get("market_data", {})
+        circ = _safe_float(md.get("circulating_supply"))
+        if circ is not None:
+            return circ, "CoinGecko circulating_supply fallback"
+
+    return None, "Supply FAILED"
 
 def _fetch_tvl() -> tuple[Optional[float], str]:
     """
