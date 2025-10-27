@@ -336,7 +336,7 @@ def usde_data():
     data = get_usde_snapshot()
     return jsonify({"status": "success", "data": data})
 
-@app.post("/usde/refresh")
+@app.route("/usde/refresh", methods=["POST"])
 def usde_refresh():
     data = refresh_usde_snapshot()
     return jsonify({"status": "ok", "as_of": data.get("as_of")})
