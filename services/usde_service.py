@@ -33,73 +33,84 @@ def _safe_float(x) -> Optional[float]:
 
 # ---------- Data fetchers ----------
 
-def _fetch_price() -> tuple[Optional[float], str]:
+def _fetch_price_and_supply_from_llama() -> tuple[Optional[float], Optional[float], str]:
     """
-    Try CoinGecko simple/price first (fast, low data),
-    then fall back to full coin data for 'ethena-usde'.
-    """
-    ids_to_try = ["usde", "ethena-usde", "ethena-usd"]
+    Pull USDe info from DeFiLlama stablecoins API.
+    Returns (price, supply, source_string).
 
-    # Try simple/price first
-    for cid in ids_to_try:
-        res = fetch_json(
-            "https://api.coingecko.com/api/v3/simple/price",
-            params={"ids": cid, "vs_currencies": "usd"}
-        )
-        if isinstance(res, dict) and cid in res:
-            usd_val = res[cid].get("usd")
-            p = _safe_float(usd_val)
-            if p is not None:
-                return p, f"CoinGecko simple price ({cid})"
-
-    # Fallback: full coin endpoint
-    full = fetch_json("https://api.coingecko.com/api/v3/coins/ethena-usde")
-    # shape: { "market_data": { "current_price": {"usd": 0.999}, ... } }
-    if isinstance(full, dict):
-        md = full.get("market_data", {})
-        cp = md.get("current_price", {})
-        p = _safe_float(cp.get("usd"))
-        if p is not None:
-            return p, "CoinGecko /coins/ethena-usde market_data.current_price.usd"
-
-    return None, "CoinGecko FAILED"
-
-def _fetch_supply() -> tuple[Optional[float], str]:
-    """
-    Try to get circulating supply from DeFiLlama stablecoins dataset.
-    Fallback to CoinGecko /coins/ethena-usde if Llama fails.
+    DeFiLlama shape (simplified):
+    {
+      "peggedAssets": [
+        {
+          "symbol": "USDe",
+          "name": "USDe",
+          "circulating": [ { "circulating": 10379093520.89, ... }, ... ],
+          "price": 0.9993  <-- sometimes this exists, sometimes per-chainPrices
+          ...
+        },
+        ...
+      ]
+    }
     """
     res = fetch_json("https://stablecoins.llama.fi/stablecoins?includePrices=true")
+    if not res or "peggedAssets" not in res:
+        return None, None, "DeFiLlama stablecoins FAILED (no peggedAssets)"
 
-    if res and "peggedAssets" in res:
-        for asset in res["peggedAssets"]:
-            symbol = str(asset.get("symbol", "")).lower()
-            name = str(asset.get("name", "")).lower()
-            if "usde" in symbol or "usde" in name:
-                # Try history first
-                hist = asset.get("circulating") or asset.get("chainCirculating") or []
-                if isinstance(hist, list) and hist:
-                    last = hist[-1]
-                    for k in ("circulating", "totalCirculating"):
-                        cand = _safe_float(last.get(k))
-                        if cand is not None:
-                            return cand, "DeFiLlama stablecoins (hist match)"
+    # Find the asset that looks like USDe (case-insensitive, fuzzy match)
+    target = None
+    for asset in res["peggedAssets"]:
+        sym = str(asset.get("symbol", "")).lower()
+        name = str(asset.get("name", "")).lower()
+        if "usde" in sym or "usde" in name or "ethena" in name:
+            target = asset
+            break
 
-                # Fallback direct
-                cand = _safe_float(asset.get("circulating"))
-                if cand is not None:
-                    return cand, "DeFiLlama stablecoins (direct match)"
+    if target is None:
+        return None, None, "DeFiLlama stablecoins FAILED (no USDe match)"
 
-    # Fallback: CoinGecko full endpoint
-    full = fetch_json("https://api.coingecko.com/api/v3/coins/ethena-usde")
-    # shape: { "market_data": { "circulating_supply": 12345.0 } }
-    if isinstance(full, dict):
-        md = full.get("market_data", {})
-        circ = _safe_float(md.get("circulating_supply"))
-        if circ is not None:
-            return circ, "CoinGecko circulating_supply fallback"
+    # ---- supply ----
+    supply_val = None
+    hist = target.get("circulating") or target.get("chainCirculating") or []
+    if isinstance(hist, list) and hist:
+        last_point = hist[-1]
+        # try common keys
+        for key in ("circulating", "totalCirculating"):
+            cand = _safe_float(last_point.get(key))
+            if cand is not None:
+                supply_val = cand
+                break
+    if supply_val is None:
+        # fallback direct field on the asset
+        supply_val = _safe_float(target.get("circulating"))
 
-    return None, "Supply FAILED"
+    # ---- price ----
+    # Llama may give a direct "price" on the asset, or per-chain prices.
+    price_val = None
+
+    direct_price = _safe_float(target.get("price"))
+    if direct_price is not None:
+        price_val = direct_price
+
+    # If not, try per-chain price series
+    if price_val is None:
+        # some entries have "chainPrices": {"ethereum":[{...latest...}, ...], ...}
+        chain_prices = target.get("chainPrices") or target.get("prices") or {}
+        # try to walk the dict-of-lists and grab the last numeric "price"
+        if isinstance(chain_prices, dict):
+            for chain_name, series in chain_prices.items():
+                if isinstance(series, list) and series:
+                    last_entry = series[-1]
+                    cand = _safe_float(last_entry.get("price") or last_entry.get("value"))
+                    if cand is not None:
+                        price_val = cand
+                        break
+
+    # sanity filter: only accept stable-ish price
+    if price_val is not None and not (0.8 <= price_val <= 1.2):
+        price_val = None  # reject obvious nonsense
+
+    # Done
+    return price_val, supply_val, "DeFiLlama stablecoins (price & supply)"
 
 def _fetch_tvl() -> tuple[Optional[float], str]:
     """
@@ -157,19 +168,26 @@ def _peg_bps(price: Optional[float]) -> Optional[float]:
 # ---------- Main snapshot builder ----------
 
 def refresh_usde_snapshot() -> Dict[str, Any]:
-    """Fetch latest data from APIs, build snapshot, and save it."""
     _ensure_data_dir()
 
-    price, price_src = _fetch_price()
-    supply, supply_src = _fetch_supply()
-    tvl, tvl_src = _fetch_tvl()
+    # Get price & supply from Llama stablecoin API
+    llama_price, llama_supply, llama_src = _fetch_price_and_supply_from_llama()
+
+    # Get TVL from Llama protocol/tvl endpoints (your working _fetch_tvl)
+    tvl_val, tvl_src = _fetch_tvl()
+
+    # Peg deviation (in bps) from 1.00
+    def peg_bps(p):
+        if p is None:
+            return None
+        return round((p - 1.0) * 10000, 2)
 
     data = {
         "as_of": int(time.time()),
-        "price": price,
-        "supply": supply,
-        "tvl": tvl,
-        "peg_deviation_bps": _peg_bps(price),
+        "price": llama_price,
+        "supply": llama_supply,
+        "tvl": tvl_val,
+        "peg_deviation_bps": peg_bps(llama_price),
         "backing": {
             "stETH": None,
             "ETH": None,
@@ -181,7 +199,7 @@ def refresh_usde_snapshot() -> Dict[str, Any]:
             "other": None
         },
         "notes": [],
-        "sources": [price_src, supply_src, tvl_src],
+        "sources": [llama_src, tvl_src],
     }
 
     SNAPSHOT.write_text(json.dumps(data, indent=2))
