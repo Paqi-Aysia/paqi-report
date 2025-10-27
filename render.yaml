@@ -2,8 +2,17 @@ services:
   - type: web
     name: paqi-report
     env: python
-    buildCommand: ""
+    buildCommand: pip install -r requirements.txt
     startCommand: gunicorn crypto_report2:app
     envVars:
       - key: CRYPTOPANIC_TOKEN
         sync: false
+
+cronJobs:
+  - name: generate-daily-report
+    schedule: "0 */72 * * *"  # every 3 days
+    command: curl -X POST https://paqi-report.onrender.com/generate-daily-report
+
+  - name: refresh-usde-hourly
+    schedule: "0 * * * *"  # every hour
+    command: curl -X POST https://paqi-report.onrender.com/usde/refresh
