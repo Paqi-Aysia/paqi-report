@@ -76,18 +76,49 @@ def _fetch_supply() -> tuple[Optional[float], str]:
 
 def _fetch_tvl() -> tuple[Optional[float], str]:
     """
-    Try numeric DeFiLlama tvl/ethena endpoint, then fallback to /protocol/ethena.
-    Returns (tvl, info_string)
+    Return latest Ethena TVL in USD as a single float.
+    Try /tvl/ethena first. That may return:
+      - a single number
+      - OR a list of { date, totalLiquidityUSD } objects.
+    Fallback to /protocol/ethena.
     """
-    tvl_num = fetch_json("https://api.llama.fi/tvl/ethena")
-    if isinstance(tvl_num, (int, float)):
-        return float(tvl_num), "DeFiLlama tvl/ethena"
 
+    raw = fetch_json("https://api.llama.fi/tvl/ethena")
+
+    # Case 1: it's already just a number
+    if isinstance(raw, (int, float)):
+        return float(raw), "DeFiLlama tvl/ethena (number)"
+
+    # Case 2: it's a list of datapoints
+    if isinstance(raw, list) and len(raw) > 0:
+        last = raw[-1]
+        # try common keys
+        tvl_candidates = [
+            last.get("totalLiquidityUSD"),
+            last.get("tvl"),
+            last.get("totalLiquidity"),  # backup naming
+        ]
+        for cand in tvl_candidates:
+            val = _safe_float(cand)
+            if val is not None:
+                return val, "DeFiLlama tvl/ethena (timeseries latest)"
+
+    # Fallback: /protocol/ethena
     proto = fetch_json("https://api.llama.fi/protocol/ethena")
     if isinstance(proto, dict):
-        tvl_val = _safe_float(proto.get("tvl"))
-        if tvl_val is not None:
-            return tvl_val, "DeFiLlama protocol/ethena"
+        tvl_field = proto.get("tvl")
+        # tvl might again be a number OR a list
+        if isinstance(tvl_field, (int, float)):
+            return float(tvl_field), "DeFiLlama protocol/ethena (number)"
+        if isinstance(tvl_field, list) and len(tvl_field) > 0:
+            last = tvl_field[-1]
+            if isinstance(last, dict):
+                # common keys in protocol history objects
+                for k in ("totalLiquidityUSD", "tvl", "totalLiquidity"):
+                    val = _safe_float(last.get(k))
+                    if val is not None:
+                        return val, "DeFiLlama protocol/ethena (series latest)"
+
     return None, "DeFiLlama tvl FAILED"
 
 def _peg_bps(price: Optional[float]) -> Optional[float]:
